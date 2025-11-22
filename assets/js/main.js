@@ -1,0 +1,379 @@
+const header = document.querySelector('.hh-header');
+const nav = document.querySelector('.hh-nav');
+const burger = document.querySelector('.hh-burger');
+const subs = document.querySelectorAll('.hh-has-sub');
+const canvas = document.getElementById('hh-constellation');
+const yearEl = document.getElementById('year');
+const starfield = document.querySelector('.hh-starfield');
+const shootingStars = document.querySelector('.hh-shooting-stars');
+const sparkles = document.querySelector('.hh-sparkles');
+const skyline = document.querySelector('.hh-skyline');
+
+if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+}
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const closeAllSubmenus = () => {
+    subs.forEach(sub => {
+        sub.classList.remove('open');
+        const trigger = sub.querySelector('.hh-link');
+        if (trigger) {
+            trigger.setAttribute('aria-expanded', 'false');
+        }
+    });
+};
+
+const closeMobileNav = () => {
+    if (!nav) {
+        return;
+    }
+    nav.classList.remove('open');
+    burger?.setAttribute('aria-expanded', 'false');
+    burger?.classList.remove('is-active');
+    closeAllSubmenus();
+};
+
+const onScroll = () => {
+    const root = document.documentElement;
+    if (window.scrollY > 60) {
+        root.classList.add('hh-scrolled');
+    } else {
+        root.classList.remove('hh-scrolled');
+    }
+
+    if (skyline && !prefersReducedMotion) {
+        const offset = Math.min(window.scrollY * 0.18, 90);
+        skyline.style.transform = `translateX(-50%) translateY(${offset}px)`;
+    }
+};
+
+onScroll();
+window.addEventListener('scroll', onScroll, { passive: true });
+
+if (burger && nav) {
+    burger.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+            burger.classList.add('is-active');
+        } else {
+            closeMobileNav();
+        }
+    });
+}
+
+subs.forEach(sub => {
+    const trigger = sub.querySelector('.hh-link');
+    if (!trigger) {
+        return;
+    }
+    trigger.setAttribute('aria-expanded', 'false');
+    const setExpanded = value => trigger.setAttribute('aria-expanded', String(value));
+
+    // Mobile toggle
+    trigger.addEventListener('click', event => {
+        if (window.innerWidth <= 980) {
+            event.preventDefault();
+            const nowOpen = sub.classList.toggle('open');
+            setExpanded(nowOpen);
+        }
+    });
+
+    // Desktop hover
+    sub.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 980) {
+            setExpanded(true);
+        }
+    });
+
+    sub.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 980) {
+            setExpanded(false);
+        }
+    });
+
+    // Keyboard accessibility
+    sub.addEventListener('focusin', () => {
+        if (window.innerWidth > 980) {
+            sub.classList.add('open'); // Ensure class is added for visual state if needed
+            setExpanded(true);
+        }
+    });
+
+    sub.addEventListener('focusout', event => {
+        if (window.innerWidth > 980) {
+            const nextTarget = event.relatedTarget;
+            if (!nextTarget || !sub.contains(nextTarget)) {
+                sub.classList.remove('open');
+                setExpanded(false);
+            }
+        }
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', event => {
+        const id = link.getAttribute('href');
+        if (!id || id === '#') {
+            return;
+        }
+        const target = document.querySelector(id);
+        if (!target) {
+            return;
+        }
+        event.preventDefault();
+        const behavior = prefersReducedMotion ? 'auto' : 'smooth';
+        target.scrollIntoView({ behavior });
+        if (!target.hasAttribute('tabindex')) {
+            target.setAttribute('tabindex', '-1');
+        }
+        target.focus({ preventScroll: true });
+        if (nav && nav.classList.contains('open') && window.innerWidth <= 980) {
+            closeMobileNav();
+        }
+    });
+});
+
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+        if (nav?.classList.contains('open')) {
+            closeMobileNav();
+            burger?.focus();
+        } else {
+            closeAllSubmenus();
+        }
+    }
+});
+
+let atmosphereResizeTimeout;
+
+const createStars = () => {
+    if (!starfield || prefersReducedMotion) {
+        return;
+    }
+    const starDisplay = window.getComputedStyle(starfield).display;
+    if (starDisplay === "none") {
+        starfield.innerHTML = "";
+        return;
+    }
+    starfield.innerHTML = '';
+    const starTotal = window.innerWidth < 768 ? 85 : 180;
+    for (let i = 0; i < starTotal; i += 1) {
+        const node = document.createElement('span');
+        const size = Math.random() * 1.4 + 0.4;
+        node.style.top = `${Math.random() * 100}%`;
+        node.style.left = `${Math.random() * 100}%`;
+        node.style.width = `${size}px`;
+        node.style.height = `${size}px`;
+        node.style.animationDelay = `${Math.random() * 10}s`;
+        node.style.animationDuration = `${6 + Math.random() * 6}s`;
+        starfield.appendChild(node);
+    }
+};
+
+const createShootingStars = () => {
+    if (!shootingStars || prefersReducedMotion) {
+        return;
+    }
+    const shootingDisplay = window.getComputedStyle(shootingStars).display;
+    if (shootingDisplay === "none") {
+        shootingStars.innerHTML = "";
+        return;
+    }
+    shootingStars.innerHTML = '';
+    const count = window.innerWidth < 768 ? 4 : 7;
+    for (let i = 0; i < count; i += 1) {
+        const span = document.createElement('span');
+        const delay = Math.random() * 4;
+        span.style.top = `${Math.random() * 55}%`;
+        span.style.left = `${Math.random() * 40 - 20}%`;
+        span.style.animationDelay = `${delay}s`;
+        span.style.animationDuration = `${2 + Math.random() * 1.2}s`;
+        shootingStars.appendChild(span);
+    }
+};
+
+const createSparkles = () => {
+    if (!sparkles || prefersReducedMotion) {
+        return;
+    }
+    sparkles.innerHTML = '';
+    const palette = ['rgba(255,123,46,0.95)', 'rgba(255,189,125,0.9)', 'rgba(46,230,213,0.85)'];
+    const count = window.innerWidth < 768 ? 20 : 36;
+    for (let i = 0; i < count; i += 1) {
+        const span = document.createElement('span');
+        const tone = palette[Math.floor(Math.random() * palette.length)];
+        span.style.top = `${Math.random() * 100}%`;
+        span.style.left = `${Math.random() * 100}%`;
+        span.style.animationDelay = `${Math.random() * 4}s`;
+        span.style.animationDuration = `${5 + Math.random() * 4}s`;
+        span.style.background = tone;
+        span.style.boxShadow = `0 0 16px ${tone}`;
+        sparkles.appendChild(span);
+    }
+};
+
+const initCosmic = () => {
+    createStars();
+    createShootingStars();
+    createSparkles();
+};
+
+if (!prefersReducedMotion) {
+    initCosmic();
+}
+
+window.addEventListener('resize', () => {
+    clearTimeout(atmosphereResizeTimeout);
+    atmosphereResizeTimeout = setTimeout(() => {
+        initCosmic();
+    }, 200);
+});
+
+let ctx = null;
+if (canvas && canvas.getContext && !prefersReducedMotion) {
+    ctx = canvas.getContext('2d', { alpha: true });
+}
+
+let rafId;
+let hoveredLink = null;
+
+const resizeCanvas = () => {
+    if (!canvas || !ctx || !header) {
+        return;
+    }
+    const rect = header.getBoundingClientRect();
+    const ratio = window.devicePixelRatio || 1;
+    canvas.width = rect.width * ratio;
+    canvas.height = rect.height * ratio;
+    canvas.style.width = `${rect.width}px`;
+    canvas.style.height = `${rect.height}px`;
+    ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+};
+
+const clearCanvas = () => {
+    if (!ctx || !canvas) {
+        return;
+    }
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
+const drawConstellation = () => {
+    if (!ctx || !hoveredLink || !header) {
+        return;
+    }
+
+    clearCanvas();
+
+    const logo = document.querySelector('.hh-logo');
+    if (!logo) {
+        return;
+    }
+
+    const headerRect = header.getBoundingClientRect();
+    const linkRect = hoveredLink.getBoundingClientRect();
+    const logoRect = logo.getBoundingClientRect();
+
+    const linkX = linkRect.left + linkRect.width / 2 - headerRect.left;
+    const linkY = linkRect.top + linkRect.height / 2 - headerRect.top;
+    const logoX = logoRect.left + logoRect.width / 2 - headerRect.left;
+    const logoY = logoRect.top + logoRect.height / 2 - headerRect.top;
+
+    const grad = ctx.createLinearGradient(logoX, logoY, linkX, linkY);
+    grad.addColorStop(0, 'rgba(46,106,168,0.0)');
+    grad.addColorStop(0.25, 'rgba(46,106,168,0.4)');
+    grad.addColorStop(0.75, 'rgba(205,165,72,0.6)');
+    grad.addColorStop(1, 'rgba(205,165,72,0.0)');
+
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = grad;
+    ctx.beginPath();
+    ctx.moveTo(logoX, logoY);
+    ctx.lineTo(linkX, linkY);
+    ctx.stroke();
+
+    const time = Date.now() / 400;
+    const cometX = logoX + (linkX - logoX) * 0.65 + Math.cos(time) * 4;
+    const cometY = logoY + (linkY - logoY) * 0.65 + Math.sin(time) * 4;
+
+    ctx.beginPath();
+    ctx.arc(cometX, cometY, 2.2, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(205,165,72,0.9)';
+    ctx.fill();
+
+    rafId = requestAnimationFrame(drawConstellation);
+};
+
+const startConstellation = link => {
+    if (!ctx || prefersReducedMotion) {
+        return;
+    }
+    hoveredLink = link;
+    cancelAnimationFrame(rafId);
+    drawConstellation();
+};
+
+const stopConstellation = () => {
+    hoveredLink = null;
+    cancelAnimationFrame(rafId);
+    clearCanvas();
+};
+
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas();
+
+document.querySelectorAll('.hh-link').forEach(link => {
+    link.addEventListener('mouseenter', () => startConstellation(link));
+    link.addEventListener('mouseleave', stopConstellation);
+});
+
+document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+        stopConstellation();
+    }
+});
+
+// Scroll Reveal
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Lightbox
+const lightbox = document.getElementById('hh-lightbox');
+const lightboxImg = document.getElementById('hh-lightbox-img');
+const lightboxClose = document.getElementById('hh-lightbox-close');
+
+if (lightbox && lightboxImg && lightboxClose) {
+    document.querySelectorAll('.hh-gallery-card img').forEach(img => {
+        img.style.cursor = "url('assets/images/drone-cursor.png') 16 16, pointer";
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('open');
+        document.body.style.overflow = '';
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+    });
+}

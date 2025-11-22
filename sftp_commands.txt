@@ -1,0 +1,4 @@
+cd wp-content/themes/horizon-heights-theme
+lcd /Users/justinkeith/Desktop/HorizonHeightsWebsite
+put -r *
+bye

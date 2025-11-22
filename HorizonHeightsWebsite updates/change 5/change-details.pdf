@@ -1,0 +1,1539 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R] /Count 12 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 15 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 16 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 17 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 18 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 19 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 20 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 21 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 22 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 23 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 24 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 25 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 26 0 R /Resources << /Font << /F1 27 0 R >> >> >>
+endobj
+15 0 obj
+<< /Length 3879 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(Change 5 – Hero Starfield Restoration) Tj
+T*
+() Tj
+T*
+(Summary:) Tj
+T*
+(- Reintroduced the cosmic overlay \(starfield, nebula, and fast shooting stars\) atop the hero while keeping the video background.) Tj
+T*
+(- Added styling and animations for the restored visuals, tuned to the current brand palette.) Tj
+T*
+(- Extended JavaScript to seed stars responsively and respect reduced-motion preferences alongside existing navigation logic.) Tj
+T*
+() Tj
+T*
+(Updated Code:) Tj
+T*
+(=== horizonheightswebsite.html \(hero section\) ===) Tj
+T*
+(<!DOCTYPE html>) Tj
+T*
+(<html lang="en">) Tj
+T*
+(<head>) Tj
+T*
+(    <meta charset="UTF-8">) Tj
+T*
+(    <meta name="viewport" content="width=device-width, initial-scale=1.0">) Tj
+T*
+(    <title>Horizon Heights Productions | Elevate Your Visuals</title>) Tj
+T*
+(    <meta name="description" content="Horizon Heights Productions captures real estate drone media, photography, and social content across Marietta, Ohio and the Mid-Ohio Valley.">) Tj
+T*
+(    <link rel="canonical" href="https://www.yourdomain.com/">) Tj
+T*
+(    <link rel="icon" href="assets/images/logo.png" type="image/png">) Tj
+T*
+() Tj
+T*
+(    <meta property="og:type" content="website">) Tj
+T*
+(    <meta property="og:site_name" content="Horizon Heights Productions">) Tj
+T*
+(    <meta property="og:title" content="Horizon Heights Productions — Elevate Your Visuals">) Tj
+T*
+(    <meta property="og:description" content="Real estate drone media for residential listings and large land in the Mid-Ohio Valley.">) Tj
+T*
+(    <meta property="og:url" content="https://www.yourdomain.com/">) Tj
+T*
+(    <meta property="og:image" content="https://www.yourdomain.com/static/og-hero.jpg">) Tj
+T*
+() Tj
+T*
+(    <meta name="twitter:card" content="summary_large_image">) Tj
+T*
+(    <meta name="twitter:title" content="Horizon Heights Productions — Elevate Your Visuals">) Tj
+T*
+(    <meta name="twitter:description" content="MLS ready photos and cinematic drone video in Marietta, Ohio.">) Tj
+T*
+(    <meta name="twitter:image" content="https://www.yourdomain.com/static/og-hero.jpg">) Tj
+T*
+() Tj
+T*
+(    <script type="application/ld+json">{) Tj
+T*
+(        "@context":"https://schema.org",) Tj
+T*
+(        "@type":"LocalBusiness",) Tj
+T*
+(        "name":"Horizon Heights Productions",) Tj
+T*
+(        "url":"https://www.yourdomain.com/",) Tj
+T*
+(        "image":"https://www.yourdomain.com/static/og-hero.jpg",) Tj
+T*
+(        "slogan":"Elevate Your Visuals",) Tj
+T*
+(        "description":"Real estate drone videography and photography for residential homes and large land in Marietta, Ohio and the Mid-Ohio Valley.",) Tj
+T*
+(        "address":{"@type":"PostalAddress","addressLocality":"Marietta","addressRegion":"OH","addressCountry":"US"},) Tj
+T*
+(        "areaServed":"Mid-Ohio Valley",) Tj
+T*
+(        "telephone":"+1-304-543-3081") Tj
+T*
+(    }</script>) Tj
+T*
+(    <script type="application/ld+json">{) Tj
+T*
+(        "@context":"https://schema.org",) Tj
+T*
+(        "@type":"ItemList",) Tj
+T*
+(        "itemListElement":[) Tj
+T*
+(            {"@type":"SiteNavigationElement","name":"Home","url":"https://www.yourdomain.com/"},) Tj
+T*
+(            {"@type":"SiteNavigationElement","name":"Services","url":"https://www.yourdomain.com/services/"},) Tj
+T*
+(            {"@type":"SiteNavigationElement","name":"Gallery","url":"https://www.yourdomain.com/gallery/"},) Tj
+T*
+(            {"@type":"SiteNavigationElement","name":"About","url":"https://www.yourdomain.com/about/"},) Tj
+T*
+(            {"@type":"SiteNavigationElement","name":"Contact","url":"https://www.yourdomain.com/contact/"},) Tj
+T*
+(            {"@type":"SiteNavigationElement","name":"Book Now","url":"https://www.yourdomain.com/book/"}) Tj
+T*
+(        ]) Tj
+T*
+(    }</script>) Tj
+T*
+() Tj
+T*
+(    <link rel="stylesheet" href="assets/css/styles.css">) Tj
+T*
+(</head>) Tj
+T*
+ET
+endstream
+endobj
+16 0 obj
+<< /Length 3606 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(<body id="home">) Tj
+T*
+(    <header class="hh-header" role="banner">) Tj
+T*
+(        <div class="hh-wrap">) Tj
+T*
+(            <a class="hh-logo" href="#home" aria-label="Horizon Heights Productions home">) Tj
+T*
+(                <img src="assets/images/logo.png" alt="Horizon Heights Productions logo" width="120" height="120">) Tj
+T*
+(            </a>) Tj
+T*
+(            <button class="hh-burger" aria-controls="hh-menu" aria-expanded="false" aria-label="Toggle navigation">) Tj
+T*
+(                <span></span><span></span><span></span>) Tj
+T*
+(            </button>) Tj
+T*
+(            <nav class="hh-nav" aria-label="Primary navigation">) Tj
+T*
+(                <ul id="hh-menu" class="hh-menu">) Tj
+T*
+(                    <li><a class="hh-link" href="#home">Home</a></li>) Tj
+T*
+(                    <li class="hh-has-sub">) Tj
+T*
+(                        <a class="hh-link" href="#services">Services</a>) Tj
+T*
+(                        <ul class="hh-sub">) Tj
+T*
+(                            <li><a href="#residential">Residential Real Estate Media</a></li>) Tj
+T*
+(                            <li><a href="#large-land">Large Land Media</a></li>) Tj
+T*
+(                            <li><a href="#social">Social Media Packages</a></li>) Tj
+T*
+(                            <li><a href="#pricing">Travel &amp; Delivery</a></li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                    </li>) Tj
+T*
+(                    <li class="hh-has-sub">) Tj
+T*
+(                        <a class="hh-link" href="#gallery">Gallery</a>) Tj
+T*
+(                        <ul class="hh-sub">) Tj
+T*
+(                            <li><a href="#residential">Real Estate Gallery</a></li>) Tj
+T*
+(                            <li><a href="#large-land">Aerial Landscapes</a></li>) Tj
+T*
+(                            <li><a href="#social">Events &amp; Community</a></li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                    </li>) Tj
+T*
+(                    <li><a class="hh-link" href="#about">About</a></li>) Tj
+T*
+(                    <li><a class="hh-link" href="#booking">Contact</a></li>) Tj
+T*
+(                    <li><a class="hh-cta" href="#booking">Book Now</a></li>) Tj
+T*
+(                </ul>) Tj
+T*
+(            </nav>) Tj
+T*
+(            <canvas id="hh-constellation" aria-hidden="true"></canvas>) Tj
+T*
+(        </div>) Tj
+T*
+(    </header>) Tj
+T*
+() Tj
+T*
+(    <section class="hh-hero" aria-label="Hero">) Tj
+T*
+(        <video class="hh-hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">) Tj
+T*
+(            <source src="assets/video/hero-loop.mp4" type="video/mp4">) Tj
+T*
+(        </video>) Tj
+T*
+(        <div class="hh-cosmic" aria-hidden="true">) Tj
+T*
+(            <div class="hh-starfield"></div>) Tj
+T*
+(            <div class="hh-shooting-stars"></div>) Tj
+T*
+(            <div class="hh-nebula"></div>) Tj
+T*
+(        </div>) Tj
+T*
+(        <div class="hh-hero-overlay">) Tj
+T*
+(            <h1>Horizon Heights Productions</h1>) Tj
+T*
+(            <p class="hh-slogan">Elevate Your Visuals</p>) Tj
+T*
+(            <p class="hh-hero-sub">Real estate drone media in Marietta, Ohio and the Mid-Ohio Valley. MLS ready photos, cinematic video, boundary images, and social content designed to help listings stand out and sell.</p>) Tj
+T*
+(            <div class="hh-hero-ctas">) Tj
+T*
+(                <a class="hh-cta" href="#booking">Book Now</a>) Tj
+T*
+(                <a class="hh-ghost" href="#pricing">See Pricing</a>) Tj
+T*
+(            </div>) Tj
+T*
+(        </div>) Tj
+T*
+(    </section>) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+17 0 obj
+<< /Length 3777 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    <main id="content">) Tj
+T*
+(        <section id="services" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h2>Real Estate Media for Residential Homes and Large Land</h2>) Tj
+T*
+(                <p>We serve residential properties under 30 acres and large land above 30 acres. Horizon Heights captures accurate, cinematic visuals that give buyers confidence and help you close faster.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="residential" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>Residential Real Estate &mdash; Under 30 Acres</h3>) Tj
+T*
+(                <div class="hh-grid">) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Interior and Exterior Photos</h4>) Tj
+T*
+(                        <p class="hh-price">$275</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>25 to 35 edited and color graded photos</li>) Tj
+T*
+(                            <li>Window pulls and MLS-ready delivery</li>) Tj
+T*
+(                            <li>Sized for MLS and social platforms</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Book Photos</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Cinematic Video</h4>) Tj
+T*
+(                        <p class="hh-price">$475 each</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>Choose interior or exterior coverage</li>) Tj
+T*
+(                            <li>Professional edit and color grade</li>) Tj
+T*
+(                            <li>Licensed music with clean overlays</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Book Video</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                    <article class="hh-card hh-featured">) Tj
+T*
+(                        <div class="hh-badge">Best Value</div>) Tj
+T*
+(                        <h4>Residential Bundle</h4>) Tj
+T*
+(                        <p class="hh-price">$675</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>Interior and exterior photos</li>) Tj
+T*
+(                            <li>One cinematic drone video with inside/outside coverage</li>) Tj
+T*
+(                            <li>One boundary photo included \(additional $10 each\)</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <p class="hh-note">Optional voiceover add-on: $99 per video</p>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Book Bundle</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Social Media Reel</h4>) Tj
+T*
+(                        <p class="hh-price">$175</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>Vertical 60-second edit optimized for social</li>) Tj
+T*
+(                            <li>Caption-ready delivery</li>) Tj
+T*
+(                            <li>Optional voiceover add-on: $99</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Book Reel</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                </div>) Tj
+T*
+(                <div class="hh-fineprint">) Tj
+T*
+(                    <p>Residential turnaround targeted within 48 hours for photos. Video delivery typically follows within the same window when possible.</p>) Tj
+T*
+(                </div>) Tj
+T*
+ET
+endstream
+endobj
+18 0 obj
+<< /Length 3389 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="large-land" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>Large Land &mdash; 30 Acres or More</h3>) Tj
+T*
+(                <div class="hh-grid">) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Large Land Package</h4>) Tj
+T*
+(                        <p class="hh-price">$200 per parcel + $10 per acre</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>Cinematic drone video included</li>) Tj
+T*
+(                            <li>Voiceover, boundary photos, and exterior coverage</li>) Tj
+T*
+(                            <li>No cap on total photo count</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <p class="hh-note">Add a residential package if you need the on-site home highlighted.</p>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Book Large Land</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                </div>) Tj
+T*
+(                <div class="hh-fineprint">) Tj
+T*
+(                    <p>Large land turnaround targeted within five business days depending on acreage and parcel count.</p>) Tj
+T*
+(                </div>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="pricing" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>Travel and Delivery</h3>) Tj
+T*
+(                <div class="hh-grid">) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Mileage</h4>) Tj
+T*
+(                        <p class="hh-price">$0.70 per mile</p>) Tj
+T*
+(                        <p>Calculated at booking based on project location.</p>) Tj
+T*
+(                    </article>) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Delivery</h4>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>Online gallery with download links</li>) Tj
+T*
+(                            <li>MLS-ready image sets for residential listings</li>) Tj
+T*
+(                            <li>Clear file naming for easy upload</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                    </article>) Tj
+T*
+(                </div>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="gallery" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>Gallery Preview</h3>) Tj
+T*
+(                <p>Curated highlights of residential interiors, soaring exterior flyovers, and expansive large land surveys will live here. We will feature before/after frames and motion clips once your preferred assets are selected.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="social" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>Social Media Packages &mdash; Monthly</h3>) Tj
+T*
+(                <p>All packages include story posts, community engagement in comments, DM support, and monthly analytics. Event coverage includes light DM replies; Premium offers consistent DM coverage.</p>) Tj
+T*
+(                <div class="hh-grid">) Tj
+T*
+ET
+endstream
+endobj
+19 0 obj
+<< /Length 3856 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(                    <article class="hh-card hh-featured">) Tj
+T*
+(                        <div class="hh-badge">Most Popular</div>) Tj
+T*
+(                        <h4>Premium</h4>) Tj
+T*
+(                        <p class="hh-price">$2,800 / month</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>YouTube, TikTok, Instagram, and Facebook</li>) Tj
+T*
+(                            <li>Several posts per week on each platform</li>) Tj
+T*
+(                            <li>Community engagement and consistent DM replies</li>) Tj
+T*
+(                            <li>Monthly analytics report</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Start Premium</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Advanced</h4>) Tj
+T*
+(                        <p class="hh-price">$1,600 / month</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>TikTok, Instagram, and Facebook</li>) Tj
+T*
+(                            <li>Fewer weekly posts than Premium</li>) Tj
+T*
+(                            <li>Community engagement support</li>) Tj
+T*
+(                            <li>Monthly analytics report</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Start Advanced</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                    <article class="hh-card">) Tj
+T*
+(                        <h4>Basic</h4>) Tj
+T*
+(                        <p class="hh-price">$700 / month</p>) Tj
+T*
+(                        <ul class="hh-list">) Tj
+T*
+(                            <li>Facebook and Instagram</li>) Tj
+T*
+(                            <li>Three to four posts per week total</li>) Tj
+T*
+(                            <li>Optional reels as paid add-ons</li>) Tj
+T*
+(                            <li>Monthly analytics report</li>) Tj
+T*
+(                        </ul>) Tj
+T*
+(                        <a class="hh-btn" href="#booking">Start Basic</a>) Tj
+T*
+(                    </article>) Tj
+T*
+(                </div>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="about" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>About Horizon Heights</h3>) Tj
+T*
+(                <p>Horizon Heights Productions blends aviation precision with creative storytelling. From flight planning and FAA-compliant operations to post-production polish, we protect your reputation, safeguard client data, and deliver visuals that respect the privacy of every property we fly.</p>) Tj
+T*
+(                <p>Our motto is simple: elevate your visuals while elevating trust. Every project is scoped with safety briefings, square footage realities, and scheduling needs in mind so that marketing partners, Realtors, and landowners feel supported end-to-end.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="consult" class="hh-section">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>Business Commercials and Events</h3>) Tj
+T*
+(                <p>Consultation-based pricing. Call <a href="tel:13045433081">304-543-3081</a> to schedule a creative planning call and quote.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section id="booking" class="hh-section hh-cta-block">) Tj
+T*
+(            <div class="hh-container">) Tj
+T*
+(                <h3>Ready to Elevate Your Visuals?</h3>) Tj
+T*
+(                <p>Book your shoot or request a quote. Horizon Heights serves Marietta, Ohio and the Mid-Ohio Valley.</p>) Tj
+T*
+(                <div class="hh-hero-ctas">) Tj
+T*
+ET
+endstream
+endobj
+20 0 obj
+<< /Length 2759 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(                    <a class="hh-cta" href="#booking">Book Now</a>) Tj
+T*
+(                    <a class="hh-ghost" href="tel:13045433081">Call 304-543-3081</a>) Tj
+T*
+(                </div>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+(    </main>) Tj
+T*
+() Tj
+T*
+(    <footer class="hh-footer" role="contentinfo">) Tj
+T*
+(        <div class="hh-container">) Tj
+T*
+(            <p>© <span id="year"></span> Horizon Heights Productions. Marietta, Ohio. Elevate Your Visuals.</p>) Tj
+T*
+(        </div>) Tj
+T*
+(    </footer>) Tj
+T*
+() Tj
+T*
+(    <script src="assets/js/main.js"></script>) Tj
+T*
+(</body>) Tj
+T*
+(</html>) Tj
+T*
+() Tj
+T*
+(=== assets/css/styles.css \(cosmic styles\) ===) Tj
+T*
+(/* ---------- Tokens ---------- */) Tj
+T*
+(:root{) Tj
+T*
+(    --hh-blue-river:#0E355E;) Tj
+T*
+(    --hh-blue-sky:#2E6AA8;) Tj
+T*
+(    --hh-green-ridge:#2C6A4D;) Tj
+T*
+(    --hh-gold-sunset:#CDA548;) Tj
+T*
+(    --hh-night:#0A0F1A;) Tj
+T*
+(    --hh-fog:#E8EEF5;) Tj
+T*
+(    --hh-white:#FFFFFF;) Tj
+T*
+() Tj
+T*
+(    --hh-text:#EAF2FF;) Tj
+T*
+(    --hh-muted:#A9B8CC;) Tj
+T*
+() Tj
+T*
+(    --hh-radius:14px;) Tj
+T*
+(    --hh-shadow:0 10px 25px rgba\(0,0,0,.25\);) Tj
+T*
+(    --hh-fast:160ms;) Tj
+T*
+(    --hh-med:320ms;) Tj
+T*
+(    --hh-ease:cubic-bezier\(.22,.61,.36,1\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(/* ---------- Base ---------- */) Tj
+T*
+(*{box-sizing:border-box;}) Tj
+T*
+(html,body{margin:0;padding:0;background:var\(--hh-night\);color:var\(--hh-text\);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;}) Tj
+T*
+(img{max-width:100%;display:block;}) Tj
+T*
+(a{color:var\(--hh-fog\);text-decoration:none;}) Tj
+T*
+(a:hover,a:focus{color:var\(--hh-white\);}) Tj
+T*
+() Tj
+T*
+(.hh-container{max-width:1200px;margin:0 auto;padding:0 20px;}) Tj
+T*
+(.hh-section{padding:56px 0;}) Tj
+T*
+() Tj
+T*
+(h1,h2,h3,h4{margin:0 0 12px;line-height:1.2;color:var\(--hh-white\);} ) Tj
+T*
+(p{margin:0 0 12px;color:var\(--hh-fog\);} ) Tj
+T*
+() Tj
+T*
+(/* ---------- Header / Nav ---------- */) Tj
+T*
+(.hh-header{position:sticky;top:0;z-index:1000;color:var\(--hh-text\);background:linear-gradient\(180deg,rgba\(10,15,26,.72\),rgba\(10,15,26,.42\)\);backdrop-filter:saturate\(140%\) blur\(8px\);border-bottom:1px solid rgba\(255,255,255,.06\);}) Tj
+T*
+(.hh-wrap{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:18px;position:relative;}) Tj
+T*
+(.hh-logo{display:inline-flex;align-items:center;}) Tj
+T*
+() Tj
+T*
+(.hh-burger{display:none;width:44px;height:44px;border:0;background:transparent;cursor:pointer;}) Tj
+T*
+(.hh-burger span{display:block;height:2px;margin:6px 0;background:var\(--hh-text\);transition:transform var\(--hh-fast\) var\(--hh-ease\),opacity var\(--hh-fast\);}) Tj
+T*
+ET
+endstream
+endobj
+21 0 obj
+<< /Length 6055 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(.hh-burger.is-active span:nth-child\(1\){transform:translateY\(8px\) rotate\(45deg\);}) Tj
+T*
+(.hh-burger.is-active span:nth-child\(2\){opacity:0;}) Tj
+T*
+(.hh-burger.is-active span:nth-child\(3\){transform:translateY\(-8px\) rotate\(-45deg\);}) Tj
+T*
+() Tj
+T*
+() Tj
+T*
+(.hh-nav{display:flex;align-items:center;margin-left:auto;}) Tj
+T*
+(.hh-nav ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:12px;}) Tj
+T*
+(.hh-link{color:var\(--hh-text\);padding:10px 12px;border-radius:10px;position:relative;transition:color var\(--hh-fast\),transform var\(--hh-fast\) var\(--hh-ease\);} ) Tj
+T*
+(.hh-link:hover,.hh-link:focus{color:var\(--hh-white\);transform:translateY\(-1px\);text-shadow:0 0 6px rgba\(205,165,72,.5\);} ) Tj
+T*
+(.hh-link::after{content:"";position:absolute;left:10%;right:10%;bottom:6px;height:1px;width:0;background:linear-gradient\(90deg,var\(--hh-blue-sky\),var\(--hh-gold-sunset\)\);transition:width var\(--hh-med\) var\(--hh-ease\);} ) Tj
+T*
+(.hh-link:hover::after,.hh-link:focus::after{width:80%;}) Tj
+T*
+() Tj
+T*
+(.hh-has-sub{position:relative;}) Tj
+T*
+(.hh-has-sub>.hh-sub{position:absolute;top:100%;left:0;min-width:260px;display:none;flex-direction:column;gap:6px;background:rgba\(10,15,26,.96\);padding:12px;border-radius:12px;box-shadow:var\(--hh-shadow\);}) Tj
+T*
+(.hh-has-sub:hover>.hh-sub{display:flex;}) Tj
+T*
+(.hh-sub a{color:var\(--hh-text\);padding:8px 10px;border-radius:8px;transition:background var\(--hh-fast\),color var\(--hh-fast\);} ) Tj
+T*
+(.hh-sub a:hover,.hh-sub a:focus{background:rgba\(205,165,72,.18\);color:var\(--hh-white\);} ) Tj
+T*
+() Tj
+T*
+(.hh-cta{background:var\(--hh-gold-sunset\);color:var\(--hh-night\);padding:10px 18px;border-radius:999px;font-weight:700;position:relative;box-shadow:0 0 10px rgba\(205,165,72,.55\);transition:transform var\(--hh-fast\) var\(--hh-ease\),box-shadow var\(--hh-med\);} ) Tj
+T*
+(.hh-cta::before{content:"";position:absolute;inset:-4px;border-radius:inherit;box-shadow:0 0 30px rgba\(205,165,72,.3\);opacity:.6;filter:blur\(6px\);animation:hh-orbit 5s linear infinite;} ) Tj
+T*
+(.hh-cta:hover,.hh-cta:focus{transform:translateY\(-1px\) scale\(1.03\);box-shadow:0 0 22px rgba\(205,165,72,.9\);} ) Tj
+T*
+() Tj
+T*
+(@keyframes hh-orbit{to{transform:rotate\(360deg\);}}) Tj
+T*
+() Tj
+T*
+(#hh-constellation{position:absolute;inset:0;pointer-events:none;width:100%;height:100%;}) Tj
+T*
+() Tj
+T*
+(/* ---------- Hero ---------- */) Tj
+T*
+(.hh-hero{position:relative;min-height:68vh;display:grid;place-items:center;overflow:hidden;}) Tj
+T*
+(.hh-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness\(.6\);}) Tj
+T*
+(.hh-hero-overlay{position:relative;z-index:2;text-align:center;padding:40px 20px;max-width:900px;}) Tj
+T*
+(.hh-slogan{font-size:1.4rem;color:var\(--hh-fog\);} ) Tj
+T*
+(.hh-hero-sub{margin-top:6px;}) Tj
+T*
+(.hh-hero-ctas{display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap;}) Tj
+T*
+(.hh-ghost{border:1px solid rgba\(255,255,255,.5\);padding:10px 18px;border-radius:999px;color:var\(--hh-white\);}) Tj
+T*
+(.hh-ghost:hover,.hh-ghost:focus{background:rgba\(255,255,255,.14\);} ) Tj
+T*
+() Tj
+T*
+(.hh-cosmic{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;}) Tj
+T*
+(.hh-starfield,.hh-shooting-stars,.hh-nebula{position:absolute;inset:0;}) Tj
+T*
+(.hh-starfield span{position:absolute;width:2px;height:2px;border-radius:50%;background:rgba\(234,242,255,0.8\);opacity:0.35;animation:hh-twinkle 5s infinite ease-in-out;}) Tj
+T*
+(@keyframes hh-twinkle{0%,100%{opacity:0.1;transform:scale\(0.75\);}50%{opacity:1;transform:scale\(1.6\);}}) Tj
+T*
+(.hh-shooting-stars span{position:absolute;display:block;width:230px;height:3px;background:linear-gradient\(90deg,rgba\(205,165,72,0\) 0%,rgba\(205,165,72,0.85\) 18%,rgba\(255,215,164,0.95\) 52%,rgba\(46,230,213,0.95\) 100%\);border-radius:999px;box-shadow:0 0 28px rgba\(255,215,164,0.7\),0 0 46px rgba\(46,230,213,0.6\);transform:rotate\(10deg\);mix-blend-mode:screen;animation:hh-shooting 2.4s linear infinite;}) Tj
+T*
+(@keyframes hh-shooting{0%{transform:translate3d\(-240%, -180%, 0\) rotate\(10deg\);opacity:0;}12%{opacity:1;}60%{opacity:1;}100%{transform:translate3d\(240%, 160%, 0\) rotate\(10deg\);opacity:0;}}) Tj
+T*
+(.hh-nebula{background:radial-gradient\(circle at 15% 25%,rgba\(46,230,213,0.18\),transparent 45%\),radial-gradient\(circle at 82% 35%,rgba\(255,165,92,0.2\),transparent 55%\),radial-gradient\(circle at 55% 80%,rgba\(120,81,255,0.25\),transparent 60%\);mix-blend-mode:screen;animation:hh-nebula-pulse 18s ease-in-out infinite;}) Tj
+T*
+(@keyframes hh-nebula-pulse{0%,100%{transform:scale\(1\);opacity:0.75;}50%{transform:scale\(1.1\);opacity:1;}}) Tj
+T*
+() Tj
+T*
+(/* ---------- Cards / Grid ---------- */) Tj
+T*
+(.hh-grid{display:grid;grid-template-columns:repeat\(4,1fr\);gap:16px;margin-top:18px;}) Tj
+T*
+(@media \(max-width:1100px\){.hh-grid{grid-template-columns:repeat\(2,1fr\);}}) Tj
+T*
+(@media \(max-width:640px\){.hh-grid{grid-template-columns:1fr;}}) Tj
+T*
+() Tj
+T*
+(.hh-card{background:linear-gradient\(180deg,rgba\(255,255,255,.05\),rgba\(255,255,255,.02\)\);border:1px solid rgba\(255,255,255,.08\);border-radius:16px;padding:18px;box-shadow:0 6px 18px rgba\(0,0,0,.2\);transition:transform var\(--hh-fast\) var\(--hh-ease\),box-shadow var\(--hh-fast\) var\(--hh-ease\);} ) Tj
+T*
+(.hh-card:hover,.hh-card:focus-within{transform:translateY\(-3px\);box-shadow:0 10px 28px rgba\(0,0,0,.28\);} ) Tj
+T*
+(.hh-price{font-size:1.6rem;color:var\(--hh-white\);font-weight:700;margin:4px 0 10px;}) Tj
+T*
+(.hh-list{margin:0;padding-left:20px;color:var\(--hh-fog\);} ) Tj
+T*
+(.hh-note{color:var\(--hh-muted\);font-size:.95rem;margin-top:8px;} ) Tj
+T*
+(.hh-btn{display:inline-block;margin-top:12px;background:var\(--hh-blue-sky\);color:#fff;padding:10px 16px;border-radius:10px;transition:background var\(--hh-fast\),transform var\(--hh-fast\);} ) Tj
+T*
+(.hh-btn:hover,.hh-btn:focus{background:var\(--hh-green-ridge\);transform:translateY\(-1px\);} ) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+22 0 obj
+<< /Length 3077 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(.hh-featured{border-color:rgba\(205,165,72,.35\);box-shadow:0 10px 30px rgba\(205,165,72,.18\);} ) Tj
+T*
+(.hh-badge{display:inline-block;background:rgba\(205,165,72,.2\);color:#fff;padding:4px 10px;border-radius:999px;margin-bottom:8px;border:1px solid rgba\(205,165,72,.5\);} ) Tj
+T*
+() Tj
+T*
+(.hh-fineprint p{font-size:.95rem;color:var\(--hh-muted\);} ) Tj
+T*
+() Tj
+T*
+(/* ---------- CTA block ---------- */) Tj
+T*
+(.hh-cta-block{background:radial-gradient\(1200px 600px at 70% -20%,rgba\(46,106,168,.25\),rgba\(10,15,26,.98\)\);text-align:center;}) Tj
+T*
+(.hh-cta-block h3{font-size:1.8rem;}) Tj
+T*
+() Tj
+T*
+(/* ---------- Footer ---------- */) Tj
+T*
+(.hh-footer{padding:28px 0;border-top:1px solid rgba\(255,255,255,.06\);text-align:center;}) Tj
+T*
+() Tj
+T*
+(/* ---------- Mobile menu ---------- */) Tj
+T*
+(@media \(max-width:980px\){) Tj
+T*
+(    .hh-burger{display:inline-flex;align-items:center;justify-content:center;}) Tj
+T*
+(    .hh-nav{position:fixed;inset:0;background:radial-gradient\(1200px 600px at 70% -20%,rgba\(46,106,168,.25\),rgba\(10,15,26,.98\)\);transform:translateY\(-100%\);transition:transform var\(--hh-med\) var\(--hh-ease\);padding-top:70px;}) Tj
+T*
+(    .hh-nav.open{transform:translateY\(0\);}) Tj
+T*
+(    .hh-nav ul{flex-direction:column;gap:10px;padding:30px 24px 24px;}) Tj
+T*
+(    .hh-has-sub>.hh-sub{position:static;display:none;background:transparent;box-shadow:none;padding:0;margin-top:6px;}) Tj
+T*
+(    .hh-has-sub.open>.hh-sub{display:flex;}) Tj
+T*
+(    .hh-sub a{padding:8px 12px;}) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(/* ---------- Reduced Motion ---------- */) Tj
+T*
+(@media \(prefers-reduced-motion:reduce\){) Tj
+T*
+(    *,*::before,*::after{transition:none !important;animation:none !important;}) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(=== assets/js/main.js \(cosmic scripting\) ===) Tj
+T*
+(const header = document.querySelector\('.hh-header'\);) Tj
+T*
+(const nav = document.querySelector\('.hh-nav'\);) Tj
+T*
+(const burger = document.querySelector\('.hh-burger'\);) Tj
+T*
+(const subs = document.querySelectorAll\('.hh-has-sub'\);) Tj
+T*
+(const canvas = document.getElementById\('hh-constellation'\);) Tj
+T*
+(const yearEl = document.getElementById\('year'\);) Tj
+T*
+(const starfield = document.querySelector\('.hh-starfield'\);) Tj
+T*
+(const shootingStars = document.querySelector\('.hh-shooting-stars'\);) Tj
+T*
+() Tj
+T*
+(if \(yearEl\) {) Tj
+T*
+(    yearEl.textContent = new Date\(\).getFullYear\(\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(const prefersReducedMotion = window.matchMedia\('\(prefers-reduced-motion: reduce\)'\).matches;) Tj
+T*
+() Tj
+T*
+(const onScroll = \(\) => {) Tj
+T*
+(    const root = document.documentElement;) Tj
+T*
+(    if \(window.scrollY > 60\) {) Tj
+T*
+(        root.classList.add\('hh-scrolled'\);) Tj
+T*
+(    } else {) Tj
+T*
+(        root.classList.remove\('hh-scrolled'\);) Tj
+T*
+(    }) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(onScroll\(\);) Tj
+T*
+(window.addEventListener\('scroll', onScroll, { passive: true }\);) Tj
+T*
+() Tj
+T*
+(if \(burger && nav\) {) Tj
+T*
+(    burger.addEventListener\('click', \(\) => {) Tj
+T*
+ET
+endstream
+endobj
+23 0 obj
+<< /Length 2324 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(        const isOpen = nav.classList.toggle\('open'\);) Tj
+T*
+(        burger.setAttribute\('aria-expanded', String\(isOpen\)\);) Tj
+T*
+(        if \(isOpen\) {) Tj
+T*
+(            burger.classList.add\('is-active'\);) Tj
+T*
+(        } else {) Tj
+T*
+(            burger.classList.remove\('is-active'\);) Tj
+T*
+(        }) Tj
+T*
+(    }\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(subs.forEach\(sub => {) Tj
+T*
+(    const trigger = sub.querySelector\('.hh-link'\);) Tj
+T*
+(    if \(!trigger\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+(    trigger.addEventListener\('click', event => {) Tj
+T*
+(        if \(window.innerWidth <= 980\) {) Tj
+T*
+(            event.preventDefault\(\);) Tj
+T*
+(            sub.classList.toggle\('open'\);) Tj
+T*
+(        }) Tj
+T*
+(    }\);) Tj
+T*
+(}\);) Tj
+T*
+() Tj
+T*
+(document.querySelectorAll\('a[href^="#"]'\).forEach\(link => {) Tj
+T*
+(    link.addEventListener\('click', event => {) Tj
+T*
+(        const id = link.getAttribute\('href'\);) Tj
+T*
+(        if \(!id || id === '#'\) {) Tj
+T*
+(            return;) Tj
+T*
+(        }) Tj
+T*
+(        const target = document.querySelector\(id\);) Tj
+T*
+(        if \(!target\) {) Tj
+T*
+(            return;) Tj
+T*
+(        }) Tj
+T*
+(        event.preventDefault\(\);) Tj
+T*
+(        const behavior = prefersReducedMotion ? 'auto' : 'smooth';) Tj
+T*
+(        target.scrollIntoView\({ behavior }\);) Tj
+T*
+(        if \(!target.hasAttribute\('tabindex'\)\) {) Tj
+T*
+(            target.setAttribute\('tabindex', '-1'\);) Tj
+T*
+(        }) Tj
+T*
+(        target.focus\({ preventScroll: true }\);) Tj
+T*
+(        if \(nav && nav.classList.contains\('open'\) && window.innerWidth <= 980\) {) Tj
+T*
+(            nav.classList.remove\('open'\);) Tj
+T*
+(            burger?.setAttribute\('aria-expanded', 'false'\);) Tj
+T*
+(            burger?.classList.remove\('is-active'\);) Tj
+T*
+(        }) Tj
+T*
+(    }\);) Tj
+T*
+(}\);) Tj
+T*
+() Tj
+T*
+(let starResizeTimeout;) Tj
+T*
+() Tj
+T*
+(const createStars = \(\) => {) Tj
+T*
+(    if \(!starfield || prefersReducedMotion\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+(    starfield.innerHTML = '';) Tj
+T*
+(    const starTotal = window.innerWidth < 768 ? 65 : 140;) Tj
+T*
+(    for \(let i = 0; i < starTotal; i += 1\) {) Tj
+T*
+(        const node = document.createElement\('span'\);) Tj
+T*
+ET
+endstream
+endobj
+24 0 obj
+<< /Length 2216 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(        const size = Math.random\(\) * 1.8 + 0.6;) Tj
+T*
+(        node.style.top = `${Math.random\(\) * 100}%`;) Tj
+T*
+(        node.style.left = `${Math.random\(\) * 100}%`;) Tj
+T*
+(        node.style.width = `${size}px`;) Tj
+T*
+(        node.style.height = `${size}px`;) Tj
+T*
+(        node.style.animationDelay = `${Math.random\(\) * 6}s`;) Tj
+T*
+(        node.style.animationDuration = `${4.5 + Math.random\(\) * 4}s`;) Tj
+T*
+(        starfield.appendChild\(node\);) Tj
+T*
+(    }) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(const createShootingStars = \(\) => {) Tj
+T*
+(    if \(!shootingStars || prefersReducedMotion\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+(    shootingStars.innerHTML = '';) Tj
+T*
+(    const count = window.innerWidth < 768 ? 3 : 6;) Tj
+T*
+(    for \(let i = 0; i < count; i += 1\) {) Tj
+T*
+(        const span = document.createElement\('span'\);) Tj
+T*
+(        const delay = Math.random\(\) * 4;) Tj
+T*
+(        span.style.top = `${Math.random\(\) * 55}%`;) Tj
+T*
+(        span.style.left = `${Math.random\(\) * 40 - 20}%`;) Tj
+T*
+(        span.style.animationDelay = `${delay}s`;) Tj
+T*
+(        span.style.animationDuration = `${2 + Math.random\(\) * 1.2}s`;) Tj
+T*
+(        shootingStars.appendChild\(span\);) Tj
+T*
+(    }) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(const initCosmic = \(\) => {) Tj
+T*
+(    createStars\(\);) Tj
+T*
+(    createShootingStars\(\);) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(if \(!prefersReducedMotion\) {) Tj
+T*
+(    initCosmic\(\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(window.addEventListener\('resize', \(\) => {) Tj
+T*
+(    clearTimeout\(starResizeTimeout\);) Tj
+T*
+(    starResizeTimeout = setTimeout\(\(\) => {) Tj
+T*
+(        initCosmic\(\);) Tj
+T*
+(    }, 200\);) Tj
+T*
+(}\);) Tj
+T*
+() Tj
+T*
+(let ctx = null;) Tj
+T*
+(if \(canvas && canvas.getContext && !prefersReducedMotion\) {) Tj
+T*
+(    ctx = canvas.getContext\('2d', { alpha: true }\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(let rafId;) Tj
+T*
+(let hoveredLink = null;) Tj
+T*
+() Tj
+T*
+(const resizeCanvas = \(\) => {) Tj
+T*
+(    if \(!canvas || !ctx || !header\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+(    const rect = header.getBoundingClientRect\(\);) Tj
+T*
+(    const ratio = window.devicePixelRatio || 1;) Tj
+T*
+ET
+endstream
+endobj
+25 0 obj
+<< /Length 2383 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    canvas.width = rect.width * ratio;) Tj
+T*
+(    canvas.height = rect.height * ratio;) Tj
+T*
+(    canvas.style.width = `${rect.width}px`;) Tj
+T*
+(    canvas.style.height = `${rect.height}px`;) Tj
+T*
+(    ctx.setTransform\(ratio, 0, 0, ratio, 0, 0\);) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(const clearCanvas = \(\) => {) Tj
+T*
+(    if \(!ctx || !canvas\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+(    ctx.clearRect\(0, 0, canvas.width, canvas.height\);) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(const drawConstellation = \(\) => {) Tj
+T*
+(    if \(!ctx || !hoveredLink || !header\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    clearCanvas\(\);) Tj
+T*
+() Tj
+T*
+(    const logo = document.querySelector\('.hh-logo'\);) Tj
+T*
+(    if \(!logo\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    const headerRect = header.getBoundingClientRect\(\);) Tj
+T*
+(    const linkRect = hoveredLink.getBoundingClientRect\(\);) Tj
+T*
+(    const logoRect = logo.getBoundingClientRect\(\);) Tj
+T*
+() Tj
+T*
+(    const linkX = linkRect.left + linkRect.width / 2 - headerRect.left;) Tj
+T*
+(    const linkY = linkRect.top + linkRect.height / 2 - headerRect.top;) Tj
+T*
+(    const logoX = logoRect.left + logoRect.width / 2 - headerRect.left;) Tj
+T*
+(    const logoY = logoRect.top + logoRect.height / 2 - headerRect.top;) Tj
+T*
+() Tj
+T*
+(    const grad = ctx.createLinearGradient\(logoX, logoY, linkX, linkY\);) Tj
+T*
+(    grad.addColorStop\(0, 'rgba\(46,106,168,0.0\)'\);) Tj
+T*
+(    grad.addColorStop\(0.25, 'rgba\(46,106,168,0.4\)'\);) Tj
+T*
+(    grad.addColorStop\(0.75, 'rgba\(205,165,72,0.6\)'\);) Tj
+T*
+(    grad.addColorStop\(1, 'rgba\(205,165,72,0.0\)'\);) Tj
+T*
+() Tj
+T*
+(    ctx.lineWidth = 1.5;) Tj
+T*
+(    ctx.strokeStyle = grad;) Tj
+T*
+(    ctx.beginPath\(\);) Tj
+T*
+(    ctx.moveTo\(logoX, logoY\);) Tj
+T*
+(    ctx.lineTo\(linkX, linkY\);) Tj
+T*
+(    ctx.stroke\(\);) Tj
+T*
+() Tj
+T*
+(    const time = Date.now\(\) / 400;) Tj
+T*
+(    const cometX = logoX + \(linkX - logoX\) * 0.65 + Math.cos\(time\) * 4;) Tj
+T*
+(    const cometY = logoY + \(linkY - logoY\) * 0.65 + Math.sin\(time\) * 4;) Tj
+T*
+() Tj
+T*
+(    ctx.beginPath\(\);) Tj
+T*
+(    ctx.arc\(cometX, cometY, 2.2, 0, Math.PI * 2\);) Tj
+T*
+(    ctx.fillStyle = 'rgba\(205,165,72,0.9\)';) Tj
+T*
+(    ctx.fill\(\);) Tj
+T*
+() Tj
+T*
+(    rafId = requestAnimationFrame\(drawConstellation\);) Tj
+T*
+ET
+endstream
+endobj
+26 0 obj
+<< /Length 998 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(};) Tj
+T*
+() Tj
+T*
+(const startConstellation = link => {) Tj
+T*
+(    if \(!ctx || prefersReducedMotion\) {) Tj
+T*
+(        return;) Tj
+T*
+(    }) Tj
+T*
+(    hoveredLink = link;) Tj
+T*
+(    cancelAnimationFrame\(rafId\);) Tj
+T*
+(    drawConstellation\(\);) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(const stopConstellation = \(\) => {) Tj
+T*
+(    hoveredLink = null;) Tj
+T*
+(    cancelAnimationFrame\(rafId\);) Tj
+T*
+(    clearCanvas\(\);) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(window.addEventListener\('resize', resizeCanvas\);) Tj
+T*
+(resizeCanvas\(\);) Tj
+T*
+() Tj
+T*
+(document.querySelectorAll\('.hh-link'\).forEach\(link => {) Tj
+T*
+(    link.addEventListener\('mouseenter', \(\) => startConstellation\(link\)\);) Tj
+T*
+(    link.addEventListener\('mouseleave', stopConstellation\);) Tj
+T*
+(}\);) Tj
+T*
+() Tj
+T*
+(document.addEventListener\('visibilitychange', \(\) => {) Tj
+T*
+(    if \(document.hidden\) {) Tj
+T*
+(        stopConstellation\(\);) Tj
+T*
+(    }) Tj
+T*
+(}\);) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+27 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 28
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000187 00000 n 
+0000000315 00000 n 
+0000000443 00000 n 
+0000000571 00000 n 
+0000000699 00000 n 
+0000000827 00000 n 
+0000000955 00000 n 
+0000001083 00000 n 
+0000001212 00000 n 
+0000001341 00000 n 
+0000001470 00000 n 
+0000001599 00000 n 
+0000001728 00000 n 
+0000005660 00000 n 
+0000009319 00000 n 
+0000013149 00000 n 
+0000016591 00000 n 
+0000020500 00000 n 
+0000023312 00000 n 
+0000029420 00000 n 
+0000032550 00000 n 
+0000034927 00000 n 
+0000037196 00000 n 
+0000039632 00000 n 
+0000040682 00000 n 
+trailer
+<< /Size 28 /Root 1 0 R >>
+startxref
+40751
+%%EOF

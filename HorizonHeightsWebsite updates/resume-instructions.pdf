@@ -1,0 +1,92 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 1668 >>
+stream
+BT
+/F1 10 Tf
+14 TL
+40 760 Td
+(Horizon Heights Website – Resume Instructions) Tj
+T*
+() Tj
+T*
+(Follow these steps whenever you reopen Terminal to continue work:) Tj
+T*
+(1. Open Terminal and navigate to the project folder:) Tj
+T*
+(   cd ~/Desktop/HorizonHeightsWebsite) Tj
+T*
+(   ls) Tj
+T*
+(   \(verify files such as horizonheightswebsite.html and assets/ are present\)) Tj
+T*
+(2. Open a second tab or split pane for the change logs if needed:) Tj
+T*
+(   cd "~/Desktop/HorizonHeightsWebsite updates") Tj
+T*
+(   ls) Tj
+T*
+(   \(change 1…change N folders contain PDF summaries of prior edits\)) Tj
+T*
+(3. When I reconnect, provide quick context by running:) Tj
+T*
+(   pwd) Tj
+T*
+(   ls -R assets | head  \(or tree if available\) to show structure) Tj
+T*
+(   sed -n "1,160p" horizonheightswebsite.html  \(any portion you want me to review\)) Tj
+T*
+(   sed -n "1,160p" assets/css/styles.css) Tj
+T*
+(   sed -n "1,160p" assets/js/main.js) Tj
+T*
+(   \(Share any sections you are currently focused on\)) Tj
+T*
+(4. Mention which change-detail PDFs I should read for history and any new goals.) Tj
+T*
+(5. If a new asset was added \(e.g., video/image\), note its filename and path explicitly.) Tj
+T*
+(6. Let me know if the environment changed \(new branches, git status, etc.\).) Tj
+T*
+(7. Once I confirm, we can continue edits from that state.) Tj
+T*
+() Tj
+T*
+(Optional quick commands before we start:) Tj
+T*
+(   git status            # if the repo is under git control) Tj
+T*
+(   open horizonheightswebsite.html  # to preview in browser) Tj
+T*
+() Tj
+T*
+(All change logs remain in ~/Desktop/HorizonHeightsWebsite updates – reference them when summarizing past work.) Tj
+T*
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000001961 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2029
+%%EOF

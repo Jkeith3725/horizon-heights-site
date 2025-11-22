@@ -1,0 +1,1877 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R 15 0 R 16 0 R] /Count 14 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 17 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 18 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 19 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 20 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 21 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 22 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 23 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 24 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 25 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 26 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 27 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+14 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 28 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+15 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 29 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+16 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 30 0 R /Resources << /Font << /F1 31 0 R >> >> >>
+endobj
+17 0 obj
+<< /Length 3289 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(Change 2 – Futuristic Brand Experience) Tj
+T*
+() Tj
+T*
+(Summary:) Tj
+T*
+(- Replaced the text logotype with the Horizon Heights emblem in the header.) Tj
+T*
+(- Applied a cosmic, neon-inspired visual system with animated starfields and nebula layers.) Tj
+T*
+(- Extended JavaScript to seed responsive stars and comets while keeping smooth navigation behavior.) Tj
+T*
+() Tj
+T*
+(Updated Code:) Tj
+T*
+(=== horizonheightswebsite.html ===) Tj
+T*
+(<!DOCTYPE html>) Tj
+T*
+(<html lang="en">) Tj
+T*
+(<head>) Tj
+T*
+(    <meta charset="UTF-8">) Tj
+T*
+(    <meta name="viewport" content="width=device-width, initial-scale=1.0">) Tj
+T*
+(    <title>Horizon Heights Residences</title>) Tj
+T*
+(    <meta name="description" content="Discover Horizon Heights, a luxury residential community offering modern living, curated amenities, and breathtaking skyline views.">) Tj
+T*
+(    <link rel="stylesheet" href="assets/css/styles.css">) Tj
+T*
+(</head>) Tj
+T*
+(<body>) Tj
+T*
+(    <header class="site-header">) Tj
+T*
+(        <a class="logo" href="#overview">) Tj
+T*
+(            <img src="assets/images/logo.png" alt="Horizon Heights Productions logo">) Tj
+T*
+(            <span class="sr-only">Horizon Heights</span>) Tj
+T*
+(        </a>) Tj
+T*
+(        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>) Tj
+T*
+(        <nav class="site-nav" aria-label="Main navigation">) Tj
+T*
+(            <ul>) Tj
+T*
+(                <li><a href="#overview">Overview</a></li>) Tj
+T*
+(                <li><a href="#residences">Residences</a></li>) Tj
+T*
+(                <li><a href="#amenities">Amenities</a></li>) Tj
+T*
+(                <li><a href="#neighborhood">Neighborhood</a></li>) Tj
+T*
+(                <li><a href="#contact">Contact</a></li>) Tj
+T*
+(            </ul>) Tj
+T*
+(        </nav>) Tj
+T*
+(    </header>) Tj
+T*
+() Tj
+T*
+(    <main>) Tj
+T*
+(        <section class="hero" id="overview">) Tj
+T*
+(            <div class="cosmic-layer" aria-hidden="true">) Tj
+T*
+(                <div class="starfield"></div>) Tj
+T*
+(                <div class="shooting-stars"></div>) Tj
+T*
+(                <div class="nebula"></div>) Tj
+T*
+(            </div>) Tj
+T*
+(            <div class="hero-content">) Tj
+T*
+(                <h1>Elevate Your Everyday</h1>) Tj
+T*
+(                <p>Skyline views, curated amenities, and a community designed for inspired urban living.</p>) Tj
+T*
+(                <a class="btn primary" href="#contact">Schedule a Tour</a>) Tj
+T*
+(                <a class="btn secondary" href="#residences">Explore Residences</a>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section class="section" id="residences">) Tj
+T*
+(            <div class="section-heading">) Tj
+T*
+(                <h2>Residences Crafted for Comfort</h2>) Tj
+T*
+(                <p>Choose from sun-drenched studios to expansive penthouses, each thoughtfully appointed and move-in ready.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(            <div class="card-grid">) Tj
+T*
+(                <article class="card">) Tj
+T*
+(                    <h3>Studios &amp; One-Bedrooms</h3>) Tj
+T*
+(                    <p>Bright open layouts, integrated smart-home systems, and custom cabinetry maximize every square foot.</p>) Tj
+T*
+ET
+endstream
+endobj
+18 0 obj
+<< /Length 3399 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(                    <ul>) Tj
+T*
+(                        <li>Floor-to-ceiling windows</li>) Tj
+T*
+(                        <li>Integrated smart thermostats</li>) Tj
+T*
+(                        <li>Premium Bosch appliances</li>) Tj
+T*
+(                    </ul>) Tj
+T*
+(                </article>) Tj
+T*
+(                <article class="card">) Tj
+T*
+(                    <h3>Two-Bedroom Residences</h3>) Tj
+T*
+(                    <p>Flexible spaces with private offices, en suite bedrooms, and skyline-facing balconies.</p>) Tj
+T*
+(                    <ul>) Tj
+T*
+(                        <li>Dedicated flex room</li>) Tj
+T*
+(                        <li>Walk-in closets</li>) Tj
+T*
+(                        <li>Outdoor living space</li>) Tj
+T*
+(                    </ul>) Tj
+T*
+(                </article>) Tj
+T*
+(                <article class="card">) Tj
+T*
+(                    <h3>Penthouses</h3>) Tj
+T*
+(                    <p>Expansive entertaining areas, sweeping views, and bespoke finishes created by award-winning designers.</p>) Tj
+T*
+(                    <ul>) Tj
+T*
+(                        <li>Private rooftop terraces</li>) Tj
+T*
+(                        <li>Sommelier wine walls</li>) Tj
+T*
+(                        <li>Personalized design consultation</li>) Tj
+T*
+(                    </ul>) Tj
+T*
+(                </article>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section class="section section--accent" id="amenities">) Tj
+T*
+(            <div class="section-heading">) Tj
+T*
+(                <h2>Amenities Curated for Connection</h2>) Tj
+T*
+(                <p>Unwind, connect, and recharge with spaces tailored to your day—morning to night.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(            <div class="features-grid">) Tj
+T*
+(                <div class="feature">) Tj
+T*
+(                    <h3>Skyline Wellness Club</h3>) Tj
+T*
+(                    <p>State-of-the-art fitness center with training suites, infrared sauna, and on-site wellness concierge.</p>) Tj
+T*
+(                </div>) Tj
+T*
+(                <div class="feature">) Tj
+T*
+(                    <h3>Rooftop Oasis</h3>) Tj
+T*
+(                    <p>Infinity-edge pool, cabana lounges, and fire pits overlooking the downtown skyline.</p>) Tj
+T*
+(                </div>) Tj
+T*
+(                <div class="feature">) Tj
+T*
+(                    <h3>Residents' Atelier</h3>) Tj
+T*
+(                    <p>Co-working studios, podcast rooms, and maker spaces designed for creative collaboration.</p>) Tj
+T*
+(                </div>) Tj
+T*
+(                <div class="feature">) Tj
+T*
+(                    <h3>Culinary Conservatory</h3>) Tj
+T*
+(                    <p>Chef-curated kitchens, private dining suites, and a seasonal supper series with local chefs.</p>) Tj
+T*
+(                </div>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section class="section" id="neighborhood">) Tj
+T*
+(            <div class="section-heading">) Tj
+T*
+(                <h2>In the Heart of the Skyline District</h2>) Tj
+T*
+(                <p>Walkable streets, renowned dining, and cultural landmarks—just steps from your front door.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(            <div class="neighborhood">) Tj
+T*
+(                <article>) Tj
+T*
+(                    <h3>Dining &amp; Nightlife</h3>) Tj
+T*
+ET
+endstream
+endobj
+19 0 obj
+<< /Length 3709 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(                    <p>Discover award-winning restaurants, craft cocktail lounges, and rooftop bars within a three-block radius.</p>) Tj
+T*
+(                </article>) Tj
+T*
+(                <article>) Tj
+T*
+(                    <h3>Parks &amp; Greenways</h3>) Tj
+T*
+(                    <p>Connect with nature via the Skyline Riverwalk, botanical gardens, and weekly open-air markets.</p>) Tj
+T*
+(                </article>) Tj
+T*
+(                <article>) Tj
+T*
+(                    <h3>Culture &amp; Entertainment</h3>) Tj
+T*
+(                    <p>Moments away from the Performing Arts Center, contemporary art museums, and live music venues.</p>) Tj
+T*
+(                </article>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section class="section section--testimonials">) Tj
+T*
+(            <div class="section-heading">) Tj
+T*
+(                <h2>Resident Perspectives</h2>) Tj
+T*
+(                <p>Hear from neighbors who have already made Horizon Heights home.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(            <div class="testimonials">) Tj
+T*
+(                <blockquote>) Tj
+T*
+(                    <p>“The rooftop oasis has become our weekend retreat. The views are jaw-dropping and the staff is incredible.”</p>) Tj
+T*
+(                    <cite>— Jordan &amp; Avery, Residence 27B</cite>) Tj
+T*
+(                </blockquote>) Tj
+T*
+(                <blockquote>) Tj
+T*
+(                    <p>“I can host clients in the co-working lounge, then unwind at the wellness club. It’s the perfect balance.”</p>) Tj
+T*
+(                    <cite>— Priya S., Residence 14A</cite>) Tj
+T*
+(                </blockquote>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+() Tj
+T*
+(        <section class="section section--cta" id="contact">) Tj
+T*
+(            <div class="cta-content">) Tj
+T*
+(                <h2>Schedule Your Private Tour</h2>) Tj
+T*
+(                <p>Our leasing specialists will tailor a visit around the spaces and services that matter most to you.</p>) Tj
+T*
+(                <form class="cta-form">) Tj
+T*
+(                    <div class="form-group">) Tj
+T*
+(                        <label for="name">Full Name</label>) Tj
+T*
+(                        <input type="text" id="name" name="name" placeholder="Alex Morgan" required>) Tj
+T*
+(                    </div>) Tj
+T*
+(                    <div class="form-group">) Tj
+T*
+(                        <label for="email">Email</label>) Tj
+T*
+(                        <input type="email" id="email" name="email" placeholder="alex@example.com" required>) Tj
+T*
+(                    </div>) Tj
+T*
+(                    <div class="form-group">) Tj
+T*
+(                        <label for="phone">Phone</label>) Tj
+T*
+(                        <input type="tel" id="phone" name="phone" placeholder="\(555\) 123-4567">) Tj
+T*
+(                    </div>) Tj
+T*
+(                    <div class="form-group">) Tj
+T*
+(                        <label for="message">How can we help?</label>) Tj
+T*
+(                        <textarea id="message" name="message" rows="4" placeholder="Share your ideal move-in timeline and desired residence."></textarea>) Tj
+T*
+(                    </div>) Tj
+T*
+(                    <button type="submit" class="btn primary">Submit Request</button>) Tj
+T*
+(                </form>) Tj
+T*
+(                <p class="cta-note">Prefer a direct conversation? Call us at <a href="tel:18005551234">1-800-555-1234</a>.</p>) Tj
+T*
+(            </div>) Tj
+T*
+(        </section>) Tj
+T*
+(    </main>) Tj
+T*
+() Tj
+T*
+(    <footer class="site-footer">) Tj
+T*
+(        <div class="footer-brand">Horizon Heights</div>) Tj
+T*
+ET
+endstream
+endobj
+20 0 obj
+<< /Length 1885 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(        <div class="footer-links">) Tj
+T*
+(            <a href="#overview">Overview</a>) Tj
+T*
+(            <a href="#amenities">Amenities</a>) Tj
+T*
+(            <a href="#neighborhood">Neighborhood</a>) Tj
+T*
+(            <a href="#contact">Contact</a>) Tj
+T*
+(        </div>) Tj
+T*
+(        <p class="footer-legal">&copy; <span id="year"></span> Horizon Heights Residences. All rights reserved.</p>) Tj
+T*
+(    </footer>) Tj
+T*
+() Tj
+T*
+(    <script src="assets/js/main.js"></script>) Tj
+T*
+(</body>) Tj
+T*
+(</html>) Tj
+T*
+() Tj
+T*
+(=== assets/css/styles.css ===) Tj
+T*
+(:root {) Tj
+T*
+(    --color-background: #050714;) Tj
+T*
+(    --color-primary: #0c3a60;) Tj
+T*
+(    --color-secondary: #ff7b2e;) Tj
+T*
+(    --color-accent: #2ee6d5;) Tj
+T*
+(    --color-surface: rgba\(11, 24, 52, 0.65\);) Tj
+T*
+(    --color-surface-strong: rgba\(12, 28, 66, 0.85\);) Tj
+T*
+(    --color-text: #edf1ff;) Tj
+T*
+(    --color-muted: rgba\(237, 241, 255, 0.72\);) Tj
+T*
+(    --max-width: 1100px;) Tj
+T*
+(    --blur: 18px;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(* {) Tj
+T*
+(    box-sizing: border-box;) Tj
+T*
+(    margin: 0;) Tj
+T*
+(    padding: 0;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(body {) Tj
+T*
+(    font-family: "Helvetica Neue", Arial, sans-serif;) Tj
+T*
+(    color: var\(--color-text\);) Tj
+T*
+(    background: radial-gradient\(circle at top left, #0c193f 0%, #050714 55%, #02030a 100%\);) Tj
+T*
+(    min-height: 100vh;) Tj
+T*
+(    line-height: 1.7;) Tj
+T*
+(    -webkit-font-smoothing: antialiased;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(img {) Tj
+T*
+(    max-width: 100%;) Tj
+T*
+(    display: block;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(a {) Tj
+T*
+(    color: inherit;) Tj
+T*
+(    text-decoration: none;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(a:hover {) Tj
+T*
+(    text-decoration: underline;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.sr-only {) Tj
+T*
+(    position: absolute;) Tj
+T*
+(    width: 1px;) Tj
+T*
+(    height: 1px;) Tj
+T*
+ET
+endstream
+endobj
+21 0 obj
+<< /Length 1662 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    padding: 0;) Tj
+T*
+(    margin: -1px;) Tj
+T*
+(    overflow: hidden;) Tj
+T*
+(    clip: rect\(0, 0, 0, 0\);) Tj
+T*
+(    white-space: nowrap;) Tj
+T*
+(    border: 0;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.site-header {) Tj
+T*
+(    position: sticky;) Tj
+T*
+(    top: 0;) Tj
+T*
+(    z-index: 20;) Tj
+T*
+(    display: flex;) Tj
+T*
+(    align-items: center;) Tj
+T*
+(    justify-content: space-between;) Tj
+T*
+(    padding: 1rem 2.5rem;) Tj
+T*
+(    background: rgba\(3, 7, 18, 0.82\);) Tj
+T*
+(    backdrop-filter: blur\(var\(--blur\)\);) Tj
+T*
+(    border-bottom: 1px solid rgba\(46, 230, 213, 0.18\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.logo {) Tj
+T*
+(    display: inline-flex;) Tj
+T*
+(    align-items: center;) Tj
+T*
+(    gap: 0.75rem;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.logo img {) Tj
+T*
+(    height: 52px;) Tj
+T*
+(    width: auto;) Tj
+T*
+(    filter: drop-shadow\(0 0 8px rgba\(255, 123, 46, 0.45\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.nav-toggle {) Tj
+T*
+(    display: none;) Tj
+T*
+(    font-size: 1.75rem;) Tj
+T*
+(    background: none;) Tj
+T*
+(    border: none;) Tj
+T*
+(    color: var\(--color-text\);) Tj
+T*
+(    cursor: pointer;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.site-nav ul {) Tj
+T*
+(    display: flex;) Tj
+T*
+(    gap: 2rem;) Tj
+T*
+(    list-style: none;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.site-nav a {) Tj
+T*
+(    font-weight: 600;) Tj
+T*
+(    letter-spacing: 0.08em;) Tj
+T*
+(    text-transform: uppercase;) Tj
+T*
+(    font-size: 0.85rem;) Tj
+T*
+(    color: var\(--color-muted\);) Tj
+T*
+(    transition: color 0.3s ease, text-shadow 0.3s ease;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.site-nav a:hover,) Tj
+T*
+(.site-nav a:focus {) Tj
+T*
+(    color: var\(--color-secondary\);) Tj
+T*
+ET
+endstream
+endobj
+22 0 obj
+<< /Length 1858 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    text-shadow: 0 0 12px rgba\(46, 230, 213, 0.4\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.hero {) Tj
+T*
+(    position: relative;) Tj
+T*
+(    display: grid;) Tj
+T*
+(    place-items: center;) Tj
+T*
+(    text-align: center;) Tj
+T*
+(    min-height: 88vh;) Tj
+T*
+(    padding: 7rem 1.5rem 5rem;) Tj
+T*
+(    overflow: hidden;) Tj
+T*
+(    background: radial-gradient\(circle at center, rgba\(12, 57, 110, 0.35\) 0%, rgba\(6, 15, 35, 0.8\) 70%, rgba\(5, 7, 20, 1\) 100%\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.cosmic-layer,) Tj
+T*
+(.starfield,) Tj
+T*
+(.shooting-stars,) Tj
+T*
+(.nebula {) Tj
+T*
+(    position: absolute;) Tj
+T*
+(    inset: 0;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.cosmic-layer {) Tj
+T*
+(    overflow: hidden;) Tj
+T*
+(    z-index: 0;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.starfield {) Tj
+T*
+(    pointer-events: none;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.starfield span {) Tj
+T*
+(    position: absolute;) Tj
+T*
+(    width: 2px;) Tj
+T*
+(    height: 2px;) Tj
+T*
+(    border-radius: 50%;) Tj
+T*
+(    background: rgba\(237, 241, 255, 0.9\);) Tj
+T*
+(    opacity: 0.35;) Tj
+T*
+(    animation: twinkle 5s infinite ease-in-out;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(@keyframes twinkle {) Tj
+T*
+(    0%, 100% { opacity: 0.15; transform: scale\(0.8\); }) Tj
+T*
+(    50% { opacity: 1; transform: scale\(1.5\); }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.shooting-stars {) Tj
+T*
+(    pointer-events: none;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.shooting-stars span {) Tj
+T*
+(    position: absolute;) Tj
+T*
+(    display: block;) Tj
+T*
+(    width: 140px;) Tj
+T*
+(    height: 2px;) Tj
+T*
+(    background: linear-gradient\(90deg, rgba\(255, 123, 46, 0\) 0%, rgba\(255, 123, 46, 0.8\) 40%, rgba\(46, 230, 213, 0.95\) 100%\);) Tj
+T*
+(    border-radius: 999px;) Tj
+T*
+(    box-shadow: 0 0 16px rgba\(46, 230, 213, 0.65\);) Tj
+T*
+(    transform: rotate\(12deg\);) Tj
+T*
+(    animation: shooting 4.5s linear infinite;) Tj
+T*
+ET
+endstream
+endobj
+23 0 obj
+<< /Length 2194 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(}) Tj
+T*
+() Tj
+T*
+(@keyframes shooting {) Tj
+T*
+(    0% { transform: translate3d\(-120%, -120%, 0\) rotate\(12deg\); opacity: 0; }) Tj
+T*
+(    10% { opacity: 1; }) Tj
+T*
+(    70% { opacity: 1; }) Tj
+T*
+(    100% { transform: translate3d\(120%, 120%, 0\) rotate\(12deg\); opacity: 0; }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.nebula {) Tj
+T*
+(    background: radial-gradient\(circle at 20% 30%, rgba\(46, 230, 213, 0.18\), transparent 45%\),) Tj
+T*
+(                radial-gradient\(circle at 80% 40%, rgba\(255, 123, 46, 0.2\), transparent 50%\),) Tj
+T*
+(                radial-gradient\(circle at 50% 80%, rgba\(120, 81, 255, 0.25\), transparent 60%\);) Tj
+T*
+(    mix-blend-mode: screen;) Tj
+T*
+(    animation: pulse 18s ease-in-out infinite;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(@keyframes pulse {) Tj
+T*
+(    0%, 100% { transform: scale\(1\); opacity: 0.8; }) Tj
+T*
+(    50% { transform: scale\(1.1\); opacity: 1; }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.hero-content {) Tj
+T*
+(    position: relative;) Tj
+T*
+(    z-index: 1;) Tj
+T*
+(    max-width: 700px;) Tj
+T*
+(    display: grid;) Tj
+T*
+(    gap: 1.5rem;) Tj
+T*
+(    backdrop-filter: blur\(calc\(var\(--blur\) / 1.6\)\);) Tj
+T*
+(    background: rgba\(3, 9, 25, 0.55\);) Tj
+T*
+(    padding: 2.5rem;) Tj
+T*
+(    border-radius: 28px;) Tj
+T*
+(    border: 1px solid rgba\(46, 230, 213, 0.25\);) Tj
+T*
+(    box-shadow: 0 35px 80px rgba\(5, 12, 45, 0.45\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.hero h1 {) Tj
+T*
+(    font-size: clamp\(2.75rem, 7vw, 4.25rem\);) Tj
+T*
+(    letter-spacing: 0.06em;) Tj
+T*
+(    text-transform: uppercase;) Tj
+T*
+(    text-shadow: 0 10px 35px rgba\(4, 12, 35, 0.7\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.hero p {) Tj
+T*
+(    font-size: 1.125rem;) Tj
+T*
+(    color: var\(--color-muted\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.btn {) Tj
+T*
+(    display: inline-flex;) Tj
+T*
+(    align-items: center;) Tj
+T*
+(    justify-content: center;) Tj
+T*
+(    padding: 0.95rem 2.2rem;) Tj
+T*
+(    border-radius: 999px;) Tj
+T*
+(    font-weight: 700;) Tj
+T*
+(    letter-spacing: 0.08em;) Tj
+T*
+(    text-transform: uppercase;) Tj
+T*
+(    margin: 0.35rem;) Tj
+T*
+(    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;) Tj
+T*
+(}) Tj
+T*
+ET
+endstream
+endobj
+24 0 obj
+<< /Length 1761 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+() Tj
+T*
+(.btn.primary {) Tj
+T*
+(    background: linear-gradient\(120deg, #ff7b2e, #ffb347\);) Tj
+T*
+(    color: #050714;) Tj
+T*
+(    box-shadow: 0 18px 40px rgba\(255, 123, 46, 0.45\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.btn.secondary {) Tj
+T*
+(    border: 2px solid rgba\(46, 230, 213, 0.6\);) Tj
+T*
+(    color: var\(--color-text\);) Tj
+T*
+(    background: rgba\(46, 230, 213, 0.12\);) Tj
+T*
+(    box-shadow: 0 18px 40px rgba\(46, 230, 213, 0.35\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.btn:hover {) Tj
+T*
+(    transform: translateY\(-4px\) scale\(1.02\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(main {) Tj
+T*
+(    backdrop-filter: blur\(calc\(var\(--blur\) / 1.5\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.section {) Tj
+T*
+(    padding: 5rem 1.5rem;) Tj
+T*
+(    background: rgba\(5, 10, 28, 0.6\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.section:nth-of-type\(even\) {) Tj
+T*
+(    background: rgba\(10, 18, 42, 0.65\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.section-heading {) Tj
+T*
+(    max-width: var\(--max-width\);) Tj
+T*
+(    margin: 0 auto 3rem;) Tj
+T*
+(    text-align: center;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.section-heading h2 {) Tj
+T*
+(    font-size: clamp\(2.1rem, 4.2vw, 3.2rem\);) Tj
+T*
+(    margin-bottom: 1rem;) Tj
+T*
+(    text-shadow: 0 10px 35px rgba\(4, 12, 35, 0.6\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.section-heading p {) Tj
+T*
+(    color: var\(--color-muted\);) Tj
+T*
+(    font-size: 1.05rem;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.card-grid {) Tj
+T*
+(    max-width: var\(--max-width\);) Tj
+T*
+(    margin: 0 auto;) Tj
+T*
+(    display: grid;) Tj
+T*
+(    gap: 2rem;) Tj
+T*
+(    grid-template-columns: repeat\(auto-fit, minmax\(260px, 1fr\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.card {) Tj
+T*
+(    background: var\(--color-surface\);) Tj
+T*
+(    padding: 2.2rem;) Tj
+T*
+(    border-radius: 24px;) Tj
+T*
+ET
+endstream
+endobj
+25 0 obj
+<< /Length 1834 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    border: 1px solid rgba\(255, 123, 46, 0.2\);) Tj
+T*
+(    box-shadow: 0 28px 60px rgba\(5, 12, 45, 0.35\);) Tj
+T*
+(    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.card:hover {) Tj
+T*
+(    transform: translateY\(-6px\);) Tj
+T*
+(    box-shadow: 0 35px 80px rgba\(5, 12, 45, 0.5\);) Tj
+T*
+(    border-color: rgba\(46, 230, 213, 0.45\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.card h3 {) Tj
+T*
+(    margin-bottom: 1rem;) Tj
+T*
+(    font-size: 1.35rem;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.card p {) Tj
+T*
+(    margin-bottom: 1.25rem;) Tj
+T*
+(    color: var\(--color-muted\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.card ul {) Tj
+T*
+(    list-style: none;) Tj
+T*
+(    display: grid;) Tj
+T*
+(    gap: 0.85rem;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.card li {) Tj
+T*
+(    padding-left: 1.2rem;) Tj
+T*
+(    border-left: 3px solid rgba\(46, 230, 213, 0.7\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.section--accent {) Tj
+T*
+(    background: linear-gradient\(135deg, rgba\(12, 43, 95, 0.85\), rgba\(6, 22, 52, 0.65\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.features-grid {) Tj
+T*
+(    max-width: var\(--max-width\);) Tj
+T*
+(    margin: 0 auto;) Tj
+T*
+(    display: grid;) Tj
+T*
+(    gap: 1.75rem;) Tj
+T*
+(    grid-template-columns: repeat\(auto-fit, minmax\(240px, 1fr\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.feature {) Tj
+T*
+(    background: var\(--color-surface-strong\);) Tj
+T*
+(    padding: 2rem;) Tj
+T*
+(    border-radius: 20px;) Tj
+T*
+(    border: 1px solid rgba\(46, 230, 213, 0.25\);) Tj
+T*
+(    box-shadow: 0 24px 55px rgba\(4, 12, 35, 0.35\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.neighborhood {) Tj
+T*
+(    max-width: var\(--max-width\);) Tj
+T*
+(    margin: 0 auto;) Tj
+T*
+(    display: grid;) Tj
+T*
+(    gap: 2rem;) Tj
+T*
+(    grid-template-columns: repeat\(auto-fit, minmax\(280px, 1fr\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+26 0 obj
+<< /Length 1801 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(.section--testimonials {) Tj
+T*
+(    background: linear-gradient\(160deg, rgba\(12, 28, 66, 0.95\), rgba\(5, 7, 20, 0.9\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(blockquote {) Tj
+T*
+(    padding: 2.2rem;) Tj
+T*
+(    border-radius: 20px;) Tj
+T*
+(    background: rgba\(3, 9, 25, 0.55\);) Tj
+T*
+(    border: 1px solid rgba\(46, 230, 213, 0.2\);) Tj
+T*
+(    font-style: italic;) Tj
+T*
+(    box-shadow: 0 24px 55px rgba\(5, 12, 45, 0.35\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(blockquote cite {) Tj
+T*
+(    display: block;) Tj
+T*
+(    margin-top: 1.2rem;) Tj
+T*
+(    font-style: normal;) Tj
+T*
+(    text-transform: uppercase;) Tj
+T*
+(    letter-spacing: 0.1em;) Tj
+T*
+(    font-size: 0.78rem;) Tj
+T*
+(    color: rgba\(237, 241, 255, 0.6\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.section--cta {) Tj
+T*
+(    background: linear-gradient\(160deg, rgba\(12, 43, 95, 0.95\), rgba\(255, 123, 46, 0.2\), rgba\(6, 15, 35, 0.9\)\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.cta-content {) Tj
+T*
+(    max-width: 760px;) Tj
+T*
+(    margin: 0 auto;) Tj
+T*
+(    text-align: center;) Tj
+T*
+(    background: rgba\(5, 10, 28, 0.65\);) Tj
+T*
+(    padding: 3rem 2.5rem;) Tj
+T*
+(    border-radius: 28px;) Tj
+T*
+(    border: 1px solid rgba\(46, 230, 213, 0.3\);) Tj
+T*
+(    box-shadow: 0 35px 80px rgba\(5, 12, 45, 0.45\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.cta-content h2 {) Tj
+T*
+(    margin-bottom: 1rem;) Tj
+T*
+(    font-size: clamp\(2.3rem, 5.5vw, 3.1rem\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.cta-content p {) Tj
+T*
+(    margin-bottom: 2rem;) Tj
+T*
+(    color: var\(--color-muted\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.cta-form {) Tj
+T*
+(    display: grid;) Tj
+T*
+(    gap: 1.2rem;) Tj
+T*
+(    margin-bottom: 1.8rem;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.form-group {) Tj
+T*
+(    text-align: left;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(label {) Tj
+T*
+(    display: block;) Tj
+T*
+ET
+endstream
+endobj
+27 0 obj
+<< /Length 1685 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    margin-bottom: 0.45rem;) Tj
+T*
+(    font-weight: 600;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(input,) Tj
+T*
+(textarea {) Tj
+T*
+(    width: 100%;) Tj
+T*
+(    padding: 0.95rem 1.1rem;) Tj
+T*
+(    border-radius: 14px;) Tj
+T*
+(    border: 1px solid rgba\(46, 230, 213, 0.35\);) Tj
+T*
+(    font-size: 1rem;) Tj
+T*
+(    background: rgba\(3, 9, 25, 0.65\);) Tj
+T*
+(    color: var\(--color-text\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(textarea {) Tj
+T*
+(    resize: vertical;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(input:focus,) Tj
+T*
+(textarea:focus {) Tj
+T*
+(    outline: none;) Tj
+T*
+(    border-color: rgba\(255, 123, 46, 0.7\);) Tj
+T*
+(    box-shadow: 0 0 0 4px rgba\(255, 123, 46, 0.2\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.cta-note {) Tj
+T*
+(    font-size: 0.95rem;) Tj
+T*
+(    color: rgba\(237, 241, 255, 0.68\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.site-footer {) Tj
+T*
+(    padding: 2.8rem 1.5rem 2.2rem;) Tj
+T*
+(    background: rgba\(3, 7, 18, 0.9\);) Tj
+T*
+(    color: rgba\(237, 241, 255, 0.7\);) Tj
+T*
+(    text-align: center;) Tj
+T*
+(    border-top: 1px solid rgba\(46, 230, 213, 0.2\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.footer-brand {) Tj
+T*
+(    display: inline-flex;) Tj
+T*
+(    align-items: center;) Tj
+T*
+(    gap: 0.6rem;) Tj
+T*
+(    font-weight: 700;) Tj
+T*
+(    letter-spacing: 0.16em;) Tj
+T*
+(    text-transform: uppercase;) Tj
+T*
+(    margin-bottom: 1rem;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.footer-links {) Tj
+T*
+(    display: flex;) Tj
+T*
+(    justify-content: center;) Tj
+T*
+(    gap: 1.75rem;) Tj
+T*
+(    margin-bottom: 1.2rem;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.footer-links a {) Tj
+T*
+(    color: rgba\(237, 241, 255, 0.66\);) Tj
+T*
+(    font-size: 0.9rem;) Tj
+T*
+(    letter-spacing: 0.06em;) Tj
+T*
+ET
+endstream
+endobj
+28 0 obj
+<< /Length 1704 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    text-transform: uppercase;) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.footer-links a:hover {) Tj
+T*
+(    color: var\(--color-secondary\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(.footer-legal {) Tj
+T*
+(    font-size: 0.8rem;) Tj
+T*
+(    color: rgba\(237, 241, 255, 0.55\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(@media \(max-width: 1024px\) {) Tj
+T*
+(    .site-header {) Tj
+T*
+(        padding: 1rem 1.5rem;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    .site-nav ul {) Tj
+T*
+(        gap: 1.4rem;) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(@media \(max-width: 768px\) {) Tj
+T*
+(    .nav-toggle {) Tj
+T*
+(        display: block;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    .site-nav {) Tj
+T*
+(        position: absolute;) Tj
+T*
+(        top: calc\(100% + 0.75rem\);) Tj
+T*
+(        right: 1.25rem;) Tj
+T*
+(        width: min\(320px, 88vw\);) Tj
+T*
+(        background: rgba\(3, 9, 25, 0.92\);) Tj
+T*
+(        border-radius: 18px;) Tj
+T*
+(        padding: 1.5rem;) Tj
+T*
+(        box-shadow: 0 30px 70px rgba\(5, 12, 45, 0.55\);) Tj
+T*
+(        border: 1px solid rgba\(46, 230, 213, 0.25\);) Tj
+T*
+(        opacity: 0;) Tj
+T*
+(        transform: translateY\(-12px\);) Tj
+T*
+(        pointer-events: none;) Tj
+T*
+(        transition: opacity 0.3s ease, transform 0.3s ease;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    .site-nav.open {) Tj
+T*
+(        opacity: 1;) Tj
+T*
+(        transform: translateY\(0\);) Tj
+T*
+(        pointer-events: auto;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    .site-nav ul {) Tj
+T*
+(        flex-direction: column;) Tj
+T*
+(        gap: 1.25rem;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    .hero {) Tj
+T*
+(        padding-top: 6.5rem;) Tj
+T*
+(    }) Tj
+T*
+() Tj
+T*
+(    .hero-content {) Tj
+T*
+(        padding: 2rem 1.75rem;) Tj
+T*
+ET
+endstream
+endobj
+29 0 obj
+<< /Length 2420 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(@media \(prefers-reduced-motion: reduce\) {) Tj
+T*
+(    *,) Tj
+T*
+(    *::before,) Tj
+T*
+(    *::after {) Tj
+T*
+(        animation-duration: 0.01ms !important;) Tj
+T*
+(        animation-iteration-count: 1 !important;) Tj
+T*
+(        transition-duration: 0.01ms !important;) Tj
+T*
+(        scroll-behavior: auto !important;) Tj
+T*
+(    }) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(=== assets/js/main.js ===) Tj
+T*
+(const navToggle = document.querySelector\('.nav-toggle'\);) Tj
+T*
+(const siteNav = document.querySelector\('.site-nav'\);) Tj
+T*
+(const yearEl = document.getElementById\('year'\);) Tj
+T*
+() Tj
+T*
+(if \(yearEl\) {) Tj
+T*
+(    yearEl.textContent = new Date\(\).getFullYear\(\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(if \(navToggle && siteNav\) {) Tj
+T*
+(    navToggle.addEventListener\('click', \(\) => {) Tj
+T*
+(        const isExpanded = navToggle.getAttribute\('aria-expanded'\) === 'true';) Tj
+T*
+(        navToggle.setAttribute\('aria-expanded', String\(!isExpanded\)\);) Tj
+T*
+(        siteNav.classList.toggle\('open'\);) Tj
+T*
+(    }\);) Tj
+T*
+() Tj
+T*
+(    siteNav.querySelectorAll\('a'\).forEach\(link => {) Tj
+T*
+(        link.addEventListener\('click', \(\) => {) Tj
+T*
+(            navToggle.setAttribute\('aria-expanded', 'false'\);) Tj
+T*
+(            siteNav.classList.remove\('open'\);) Tj
+T*
+(        }\);) Tj
+T*
+(    }\);) Tj
+T*
+(}) Tj
+T*
+() Tj
+T*
+(document.querySelectorAll\('a[href^="#"]'\).forEach\(link => {) Tj
+T*
+(    link.addEventListener\('click', event => {) Tj
+T*
+(        const targetId = link.getAttribute\('href'\);) Tj
+T*
+(        const targetElement = targetId ? document.querySelector\(targetId\) : null;) Tj
+T*
+() Tj
+T*
+(        if \(targetElement\) {) Tj
+T*
+(            event.preventDefault\(\);) Tj
+T*
+(            targetElement.scrollIntoView\({ behavior: 'smooth' }\);) Tj
+T*
+(            if \(!targetElement.hasAttribute\('tabindex'\)\) {) Tj
+T*
+(                targetElement.setAttribute\('tabindex', '-1'\);) Tj
+T*
+(            }) Tj
+T*
+(            targetElement.focus\({ preventScroll: true }\);) Tj
+T*
+(        }) Tj
+T*
+(    }\);) Tj
+T*
+(}\);) Tj
+T*
+() Tj
+T*
+(const starfield = document.querySelector\('.starfield'\);) Tj
+T*
+(const shootingStars = document.querySelector\('.shooting-stars'\);) Tj
+T*
+() Tj
+T*
+(const createStars = \(\) => {) Tj
+T*
+(    if \(!starfield\) return;) Tj
+T*
+(    starfield.innerHTML = '';) Tj
+T*
+ET
+endstream
+endobj
+30 0 obj
+<< /Length 1824 >>
+stream
+BT
+/F1 8 Tf
+12 TL
+36 756 Td
+() Tj
+T*
+(    const starTotal = window.innerWidth < 768 ? 55 : 120;) Tj
+T*
+(    for \(let i = 0; i < starTotal; i += 1\) {) Tj
+T*
+(        const star = document.createElement\('span'\);) Tj
+T*
+(        const size = Math.random\(\) * 1.8 + 0.6;) Tj
+T*
+(        star.style.top = `${Math.random\(\) * 100}%`;) Tj
+T*
+(        star.style.left = `${Math.random\(\) * 100}%`;) Tj
+T*
+(        star.style.width = `${size}px`;) Tj
+T*
+(        star.style.height = `${size}px`;) Tj
+T*
+(        star.style.animationDelay = `${Math.random\(\) * 6}s`;) Tj
+T*
+(        star.style.animationDuration = `${5 + Math.random\(\) * 4}s`;) Tj
+T*
+(        starfield.appendChild\(star\);) Tj
+T*
+(    }) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(const createShootingStars = \(\) => {) Tj
+T*
+(    if \(!shootingStars\) return;) Tj
+T*
+(    shootingStars.innerHTML = '';) Tj
+T*
+() Tj
+T*
+(    const shootingTotal = window.innerWidth < 768 ? 3 : 6;) Tj
+T*
+(    for \(let i = 0; i < shootingTotal; i += 1\) {) Tj
+T*
+(        const comet = document.createElement\('span'\);) Tj
+T*
+(        const delay = Math.random\(\) * 8;) Tj
+T*
+(        comet.style.top = `${Math.random\(\) * 60}%`;) Tj
+T*
+(        comet.style.left = `${Math.random\(\) * 20 - 10}%`;) Tj
+T*
+(        comet.style.animationDelay = `${delay}s`;) Tj
+T*
+(        comet.style.animationDuration = `${4 + Math.random\(\) * 2}s`;) Tj
+T*
+(        shootingStars.appendChild\(comet\);) Tj
+T*
+(    }) Tj
+T*
+(};) Tj
+T*
+() Tj
+T*
+(let resizeTimeout;) Tj
+T*
+(window.addEventListener\('resize', \(\) => {) Tj
+T*
+(    clearTimeout\(resizeTimeout\);) Tj
+T*
+(    resizeTimeout = setTimeout\(\(\) => {) Tj
+T*
+(        createStars\(\);) Tj
+T*
+(        createShootingStars\(\);) Tj
+T*
+(    }, 200\);) Tj
+T*
+(}\);) Tj
+T*
+() Tj
+T*
+(createStars\(\);) Tj
+T*
+(createShootingStars\(\);) Tj
+T*
+() Tj
+T*
+ET
+endstream
+endobj
+31 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+xref
+0 32
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000201 00000 n 
+0000000329 00000 n 
+0000000457 00000 n 
+0000000585 00000 n 
+0000000713 00000 n 
+0000000841 00000 n 
+0000000969 00000 n 
+0000001097 00000 n 
+0000001226 00000 n 
+0000001355 00000 n 
+0000001484 00000 n 
+0000001613 00000 n 
+0000001742 00000 n 
+0000001871 00000 n 
+0000002000 00000 n 
+0000005342 00000 n 
+0000008794 00000 n 
+0000012556 00000 n 
+0000014494 00000 n 
+0000016209 00000 n 
+0000018120 00000 n 
+0000020367 00000 n 
+0000022181 00000 n 
+0000024068 00000 n 
+0000025922 00000 n 
+0000027660 00000 n 
+0000029417 00000 n 
+0000031890 00000 n 
+0000033767 00000 n 
+trailer
+<< /Size 32 /Root 1 0 R >>
+startxref
+33836
+%%EOF
