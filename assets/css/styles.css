@@ -1124,18 +1124,22 @@ p {
         align-items: center;
         justify-content: center;
         gap: 5px;
-        width: 48px;
-        height: 48px;
-        padding: 8px;
-        background: rgba(255, 123, 46, 0.2);
-        border: 2px solid #FF7B2E;
-        border-radius: 8px;
+        width: 56px;
+        height: 56px;
+        padding: 10px;
+        background: #FF7B2E;
+        border: 3px solid #FFB25C;
+        border-radius: 10px;
         position: relative;
         z-index: 9999 !important;
+        box-shadow: 0 4px 12px rgba(255, 123, 46, 0.6);
     }
 
     .hh-burger span {
-        width: 28px;
+        width: 32px;
+        height: 4px;
+        background: #FFFFFF;
+        border-radius: 2px;
     }
 
     .hh-wrap {
