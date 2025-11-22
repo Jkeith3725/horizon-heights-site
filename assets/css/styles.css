@@ -431,7 +431,7 @@ p {
     box-shadow: 0 0 32px rgba(255, 178, 92, 0.5);
     opacity: .8;
     filter: blur(10px);
-    animation: hh-orbit 5s linear infinite;
+    animation: hh-highlight-glow 3.2s ease-in-out infinite;
 }
 
 .hh-cta::after {

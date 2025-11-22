@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="200" height="100">
+  <rect x="0" y="0" width="200" height="100" fill="none"/>
+  <text x="10" y="75" font-family="Arial, sans-serif" font-size="60" fill="#ffffff" font-weight="bold">MLS</text>
+  <text x="140" y="40" font-family="Arial, sans-serif" font-size="12" fill="#ffffff">®</text>
+  <text x="10" y="90" font-family="Arial, sans-serif" font-size="10" fill="#ffffff" letter-spacing="2">MULTIPLE LISTING SERVICE</text>
+</svg>
