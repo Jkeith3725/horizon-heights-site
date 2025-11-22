@@ -1126,6 +1126,13 @@ p {
         border: 2px solid #FF7B2E;
         border-radius: 8px;
         padding: 8px;
+        flex-direction: column;
+        width: 48px;
+        height: 48px;
+    }
+
+    .hh-burger span {
+        width: 28px;
     }
 
     .hh-wrap {
@@ -1143,7 +1150,7 @@ p {
         transform: translateY(-100%);
         transition: transform var(--hh-med) var(--hh-ease);
         padding-top: 96px;
-        z-index: 1001;
+        z-index: 9998;
         overflow-y: auto;
     }
 
