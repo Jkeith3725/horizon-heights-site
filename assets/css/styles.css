@@ -226,6 +226,8 @@ p {
     gap: 16px;
     color: var(--hh-text);
     text-decoration: none;
+    position: relative;
+    z-index: 100;
 }
 
 .hh-logo-badge {
