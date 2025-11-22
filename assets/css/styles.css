@@ -290,10 +290,11 @@ p {
 
 .hh-burger span {
     display: block;
-    height: 2px;
+    height: 3px;
     margin: 6px 0;
-    background: var(--hh-text);
+    background: #FF7B2E;
     transition: transform var(--hh-fast) var(--hh-ease), opacity var(--hh-fast);
+    border-radius: 2px;
 }
 
 .hh-burger.is-active span:nth-child(1) {
@@ -1121,6 +1122,10 @@ p {
         justify-content: center;
         position: relative;
         z-index: 9999 !important;
+        background: rgba(255, 123, 46, 0.2);
+        border: 2px solid #FF7B2E;
+        border-radius: 8px;
+        padding: 8px;
     }
 
     .hh-wrap {
