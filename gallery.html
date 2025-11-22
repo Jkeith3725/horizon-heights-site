@@ -4,27 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horizon Heights Productions | Elevate Your Visuals</title>
+    <title>Drone Photography Gallery | Aerial Real Estate Portfolio | Marietta Ohio</title>
     <meta name="description"
-        content="Horizon Heights Productions captures real estate drone media, photography, and social content across Marietta, Ohio and the Mid-Ohio Valley.">
+        content="View our drone photography portfolio. Aerial photos of residential properties, large land, and commercial projects in Marietta and the Mid-Ohio Valley.">
     <meta name="keywords"
-        content="real estate drone media, aerial photography Marietta Ohio, Mid-Ohio Valley videography, MLS photos, Horizon Heights Productions">
+        content="drone photography gallery, aerial photography portfolio, real estate drone photos, aerial videography examples, drone pilot work Marietta Ohio">
     <meta name="theme-color" content="#040715">
-    <link rel="canonical" href="https://www.horizonheightsproductions.com/">
+    <link rel="canonical" href="https://www.horizonheightsproductions.com/gallery.html">
     <link rel="icon" href="assets/images/logo.webp" type="image/webp">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Horizon Heights Productions">
-    <meta property="og:title" content="Horizon Heights Productions — Elevate Your Visuals">
+    <meta property="og:title" content="Drone Photography Gallery | Aerial Portfolio | Marietta OH">
     <meta property="og:description"
-        content="Real estate drone media for residential listings and large land in the Mid-Ohio Valley.">
-    <meta property="og:url" content="https://www.horizonheightsproductions.com/">
+        content="View our drone photography portfolio featuring aerial photos of residential properties, large land, and commercial projects.">
+    <meta property="og:url" content="https://www.horizonheightsproductions.com/gallery.html">
     <meta property="og:image" content="https://www.horizonheightsproductions.com/static/og-hero.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Horizon Heights Productions — Elevate Your Visuals">
-    <meta name="twitter:description" content="MLS ready photos and cinematic drone video in Marietta, Ohio.">
+    <meta name="twitter:title" content="Drone Photography Gallery | Marietta Ohio">
+    <meta name="twitter:description"
+        content="Professional aerial photography portfolio. Real estate drone photos and videos from the Mid-Ohio Valley.">
     <meta name="twitter:image" content="https://www.horizonheightsproductions.com/static/og-hero.jpg">
 
     <!-- Optimization: Preload hero poster + font for faster first paint -->
@@ -168,34 +169,51 @@
     <main id="content">
 
 
-        <!-- Optimization: Lazy-loaded gallery assets defer off-screen downloads -->
         <section id="gallery" class="hh-section hh-section--gallery reveal" aria-label="Gallery Preview">
             <div class="hh-container">
                 <h3>Gallery Preview</h3>
                 <p>Curated highlights will showcase how Horizon Heights transitions from interiors to expansive aerials.
                     Swap in your imagery and reels when they are ready.</p>
-                <div class="hh-gallery-grid">
-                    <figure class="hh-gallery-card">
-                        <img src="assets/images/gallery-1.jpg"
-                            alt="Horizon Heights residential gallery with modern interior" loading="lazy"
-                            decoding="async">
-                        <figcaption>Residential interiors &amp; twilight vignettes</figcaption>
-                    </figure>
-                    <figure class="hh-gallery-card">
-                        <img src="assets/images/gallery-2.jpg"
-                            alt="Horizon Heights large land gallery showing aerial view of farm" loading="lazy"
-                            decoding="async">
-                        <figcaption>Large land boundary flyovers</figcaption>
-                    </figure>
-                    <figure class="hh-gallery-card">
-                        <img src="assets/images/gallery-3.jpg"
-                            alt="Horizon Heights community gallery showing outdoor festival" loading="lazy"
-                            decoding="async">
-                        <figcaption>Community events, festivals, and social reels</figcaption>
-                    </figure>
+                <div id="hh-dynamic-gallery" class="hh-gallery-grid">
+                    <!-- Images will be injected here by JS -->
                 </div>
             </div>
         </section>
+
+        <!-- Gallery Automation Scripts -->
+        <script src="assets/js/gallery-data.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const galleryContainer = document.getElementById('hh-dynamic-gallery');
+                if (galleryContainer && typeof galleryImages !== 'undefined') {
+                    galleryImages.forEach(imagePath => {
+                        const figure = document.createElement('figure');
+                        figure.className = 'hh-gallery-card';
+
+                        const img = document.createElement('img');
+                        img.src = imagePath;
+                        img.alt = "Horizon Heights Gallery Image";
+                        img.loading = "lazy";
+                        img.decoding = "async";
+
+                        // Add click event for lightbox (re-using existing logic if possible, or adding inline)
+                        img.style.cursor = "url('assets/images/drone-cursor.png') 16 16, pointer";
+                        img.addEventListener('click', () => {
+                            const lightbox = document.getElementById('hh-lightbox');
+                            const lightboxImg = document.getElementById('hh-lightbox-img');
+                            if (lightbox && lightboxImg) {
+                                lightboxImg.src = img.src;
+                                lightbox.classList.add('open');
+                                document.body.style.overflow = 'hidden';
+                            }
+                        });
+
+                        figure.appendChild(img);
+                        galleryContainer.appendChild(figure);
+                    });
+                }
+            });
+        </script>
 
         <section id="faq" class="hh-section hh-section--pricing reveal" aria-label="FAQ">
             <div class="hh-container">
