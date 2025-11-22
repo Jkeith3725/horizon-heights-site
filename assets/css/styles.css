@@ -284,6 +284,8 @@ p {
     border: 0;
     background: transparent;
     cursor: pointer;
+    position: relative;
+    z-index: 9999;
 }
 
 .hh-burger span {
@@ -1114,7 +1116,7 @@ p {
 /* ---------- Mobile menu ---------- */
 @media (max-width:980px) {
     .hh-burger {
-        display: flex;
+        display: flex !important;
         align-items: center;
         justify-content: center;
         position: relative;
