@@ -1,0 +1,93 @@
+/* Complete mobile menu fix */
+@media (max-width:980px) {
+
+    /* Hamburger button - visible and styled */
+    .hh-burger {
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        width: 48px;
+        height: 48px;
+        padding: 8px;
+        background: rgba(255, 123, 46, 0.2);
+        border: 2px solid #FF7B2E;
+        border-radius: 8px;
+        position: relative;
+        z-index: 9999 !important;
+        cursor: pointer;
+    }
+
+    /* Hamburger bars - visible orange bars */
+    .hh-burger span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background: #FF7B2E;
+        border-radius: 2px;
+        transition: transform var(--hh-fast) var(--hh-ease), opacity var(--hh-fast);
+    }
+
+    /* Header layout - space between logo and burger */
+    .hh-wrap {
+        justify-content: space-between;
+    }
+
+    .hh-logo {
+        flex-shrink: 0;
+    }
+
+    /* Mobile nav - HIDDEN by default, slides down when open */
+    .hh-nav {
+        position: fixed;
+        inset: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(1200px 620px at 70% -20%, rgba(255, 123, 46, 0.32), rgba(4, 7, 21, 0.98));
+        transform: translateY(-100%);
+        transition: transform var(--hh-med) var(--hh-ease);
+        padding-top: 96px;
+        z-index: 9998;
+        overflow-y: auto;
+        visibility: hidden;
+    }
+
+    /* Mobile nav when OPEN */
+    .hh-nav.open {
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    .hh-nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 32px 48px;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .hh-has-sub {
+        width: 100%;
+    }
+
+    .hh-has-sub>.hh-sub {
+        position: static;
+        display: none;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-top: 6px;
+    }
+
+    .hh-has-sub.open>.hh-sub {
+        display: flex;
+    }
+
+    .hh-sub a {
+        padding: 8px 0;
+    }
+}
