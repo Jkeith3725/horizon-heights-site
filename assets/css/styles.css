@@ -1124,13 +1124,15 @@ p {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 5px;
-        width: 56px;
-        height: 56px;
-        padding: 10px;
+        gap: 4px;
+        width: 64px;
+        /* Increased width */
+        height: 64px;
+        /* Increased height */
+        padding: 8px;
         background: #FF7B2E;
         border: 3px solid #FFB25C;
-        border-radius: 10px;
+        border-radius: 12px;
         position: relative;
         z-index: 9999 !important;
         box-shadow: 0 4px 12px rgba(255, 123, 46, 0.6);
@@ -1138,11 +1140,21 @@ p {
     }
 
     .hh-burger span {
-        width: 32px;
-        height: 4px;
+        width: 28px;
+        /* Slightly smaller lines to fit label */
+        height: 3px;
         background: #FFFFFF;
         border-radius: 2px;
         transition: all 0.3s ease;
+    }
+
+    .hh-burger-label {
+        font-size: 10px;
+        font-weight: 800;
+        color: #FFFFFF;
+        letter-spacing: 0.05em;
+        line-height: 1;
+        margin-top: 2px;
     }
 
     /* Hamburger Animation to X */
@@ -1153,7 +1165,7 @@ p {
     }
 
     .hh-burger.is-active span:nth-child(1) {
-        transform: translateY(9px) rotate(45deg);
+        transform: translateY(7px) rotate(45deg);
         background: #FF7B2E;
         /* Orange X */
     }
@@ -1163,9 +1175,14 @@ p {
     }
 
     .hh-burger.is-active span:nth-child(3) {
-        transform: translateY(-9px) rotate(-45deg);
+        transform: translateY(-7px) rotate(-45deg);
         background: #FF7B2E;
         /* Orange X */
+    }
+
+    .hh-burger.is-active .hh-burger-label {
+        color: #FF7B2E;
+        /* Orange text when active */
     }
 
     .hh-wrap {
