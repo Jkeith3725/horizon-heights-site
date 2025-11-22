@@ -1114,7 +1114,7 @@ p {
 /* ---------- Mobile menu ---------- */
 @media (max-width:980px) {
     .hh-burger {
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         position: relative;
