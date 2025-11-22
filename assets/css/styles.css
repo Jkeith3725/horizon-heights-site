@@ -1134,6 +1134,7 @@ p {
         position: relative;
         z-index: 9999 !important;
         box-shadow: 0 4px 12px rgba(255, 123, 46, 0.6);
+        transition: all 0.3s ease;
     }
 
     .hh-burger span {
@@ -1141,6 +1142,30 @@ p {
         height: 4px;
         background: #FFFFFF;
         border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Hamburger Animation to X */
+    .hh-burger.is-active {
+        background: #040715;
+        /* Dark background for contrast against open menu */
+        border-color: #FF7B2E;
+    }
+
+    .hh-burger.is-active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+        background: #FF7B2E;
+        /* Orange X */
+    }
+
+    .hh-burger.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hh-burger.is-active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+        background: #FF7B2E;
+        /* Orange X */
     }
 
     .hh-wrap {
@@ -1154,10 +1179,13 @@ p {
     .hh-nav {
         position: fixed;
         inset: 0;
-        background: radial-gradient(1200px 620px at 70% -20%, rgba(255, 123, 46, 0.32), rgba(4, 7, 21, 0.98));
+        background: #040715;
+        /* Solid dark background for readability */
+        background: radial-gradient(circle at 70% 20%, rgba(255, 123, 46, 0.15), rgba(4, 7, 21, 0.98) 60%);
         transform: translateY(-100%);
         transition: transform var(--hh-med) var(--hh-ease);
-        padding-top: 96px;
+        padding-top: 120px;
+        /* More space for header */
         z-index: 9998;
         overflow-y: auto;
         visibility: hidden;
@@ -1170,10 +1198,32 @@ p {
 
     .hh-nav ul {
         flex-direction: column;
-        gap: 16px;
+        gap: 24px;
+        /* Increased gap */
         padding: 24px 32px 48px;
-        align-items: flex-start;
+        align-items: center;
+        /* Center items */
         width: 100%;
+        text-align: center;
+    }
+
+    /* Improved Menu Item Visibility */
+    .hh-nav .hh-link,
+    .hh-nav .hh-cta {
+        font-size: 1.5rem;
+        /* Larger text */
+        font-weight: 700;
+        color: #FFFFFF !important;
+        /* Force white */
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .hh-nav .hh-cta {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 280px;
+        display: inline-flex;
+        justify-content: center;
     }
 
     .hh-has-sub {
@@ -1186,16 +1236,21 @@ p {
         background: transparent;
         border: none;
         box-shadow: none;
-        padding: 0;
+        padding: 10px 0;
         margin-top: 6px;
+        align-items: center;
     }
 
     .hh-has-sub.open>.hh-sub {
         display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
     .hh-sub a {
         padding: 8px 0;
+        font-size: 1.1rem !important;
+        color: rgba(255, 255, 255, 0.8) !important;
     }
 
     .hh-hero-overlay {
