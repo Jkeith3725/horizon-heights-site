@@ -1120,7 +1120,15 @@ p {
         align-items: center;
         justify-content: center;
         position: relative;
-        z-index: 1002;
+        z-index: 9999 !important;
+    }
+
+    .hh-wrap {
+        justify-content: space-between;
+    }
+
+    .hh-logo {
+        flex-shrink: 0;
     }
 
     .hh-nav {
