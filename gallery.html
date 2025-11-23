@@ -250,9 +250,15 @@
                             galleryContainer.appendChild(section);
                         }
                     });
+                });
+
+            // Fallback if no sections were created
+            if (galleryContainer.children.length === 0) {
+                galleryContainer.innerHTML = '<div class="hh-container"><p>No images found in gallery data.</p></div>';
+            }
                 } else {
-                    galleryContainer.innerHTML = '<div class="hh-container"><p>Gallery data missing.</p></div>';
-                }
+                galleryContainer.innerHTML = '<div class="hh-container"><p>Gallery data missing.</p></div>';
+            }
             });
 
             // Lightbox Logic
@@ -298,6 +304,34 @@
                         <h4>Are you insured &amp; FAA certified?</h4>
                         <p>Yes. Horizon Heights maintains FAA Part 107 certification, liability insurance, and can
                             provide COIs or documentation upon request.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="hh-section hh-cta-block hh-section--booking reveal" aria-label="Booking">
+            <div class="hh-container">
+                <h3>Ready to Elevate Your Visuals?</h3>
+                <p>Book your shoot or request a quote. Horizon Heights serves Marietta, Ohio and the Mid-Ohio Valley.
+                </p>
+                <div class="hh-grid">
+                    <article class="hh-card">
+                        <h4>Book Online</h4>
+                        <p>Select your service below to schedule immediately.</p>
+                        <div class="hh-hero-ctas">
+                            <a class="hh-cta"
+                                href="https://app.squareup.com/appointments/buyer/widget/blj2znkzln34uy/LZQSPQ95SZM17"
+                                target="_blank" rel="noopener">Book an Appointment</a>
+                        </div>
+                    </article>
+                    <article class="hh-card">
+                        <h4>Talk With a Producer</h4>
+                        <p>Prefer a quick chat? Call or text for time-sensitive launches, then receive a follow-up
+                            checklist by email.</p>
+                        <div class="hh-hero-ctas">
+                            <a class="hh-ghost" href="tel:13045433081">Call 304-543-3081</a>
+                            <a class="hh-cta" href="#process">View the Process</a>
+                        </div>
                     </article>
                 </div>
             </div>
