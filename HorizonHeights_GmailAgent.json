@@ -1,0 +1,687 @@
+{
+  "name": "Horizon Heights Gmail Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "triggerOn": "newMessage",
+        "additionalFields": {
+          "labelIds": [
+            "INBOX"
+          ],
+          "q": "to:horizonheights@yourdomain.com label:inbox -category:promotions"
+        }
+      },
+      "name": "HH Gmail Trigger",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        200
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "get",
+        "messageId": "={{$json[\"id\"]}}",
+        "options": {
+          "format": "full"
+        }
+      },
+      "name": "Get Full Gmail Message",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        420,
+        200
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "const decodeBody = (message) => {\n  const headers = message.payload?.headers || [];\n  const parts = message.payload?.parts || [];\n  const bodyCandidate = parts.find(part => part.mimeType === 'text/html') || parts.find(part => part.mimeType === 'text/plain');\n  const data = bodyCandidate?.body?.data || message.payload?.body?.data || '';\n  const normalized = data.replace(/-/g, '+').replace(/_/g, '/');\n  if (!normalized) {\n    return '';\n  }\n  return Buffer.from(normalized, 'base64').toString('utf8');\n};\n\nconst headerValue = (headers, name) => {\n  const match = headers.find(h => h.name === name);\n  return match ? match.value : '';\n};\n\nreturn $input.all().map(item => {\n  const headers = item.json.payload?.headers || [];\n  const htmlBody = decodeBody(item.json);\n  const plainBody = htmlBody.replace(/<[^>]+>/g, '');\n  return {\n    json: {\n      messageId: item.json.id,\n      threadId: item.json.threadId,\n      subject: headerValue(headers, 'Subject'),\n      from: headerValue(headers, 'From'),\n      to: headerValue(headers, 'To'),\n      date: headerValue(headers, 'Date'),\n      snippet: item.json.snippet || '',\n      htmlBody,\n      plainBody,\n      prompt: `You are the Horizon Heights email agent. Respond in brand voice (warm, clear, land-focused). Provide concise summaries and directives.\n\nIncoming email metadata:\nFrom: ${headerValue(headers, 'From')}\nTo: ${headerValue(headers, 'To')}\nSubject: ${headerValue(headers, 'Subject')}\nDate: ${headerValue(headers, 'Date')}\n\nVisible snippet:\n${item.json.snippet || ''}\n\nFull body:\n${plainBody}\n`\n    }\n  };\n});"
+      },
+      "name": "Extract Email Context",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [
+        660,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://api.anthropic.com/v1/messages",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "jsonParameters": true,
+        "options": {
+          "timeout": 30
+        },
+        "body": {
+          "model": "claude-3-5-sonnet-latest",
+          "max_tokens": 400,
+          "temperature": 0.2,
+          "system": "You are the Horizon Heights email agent. Read the provided email and respond with pure JSON: {\"intent\": one of [\"respond\",\"move\",\"delete\",\"manual_review\"], \"confidence\": number 0-1, \"replyBody\": string for Gmail replies (HTML allowed), \"labels\": array of Gmail label IDs to apply, \"notes\": short summary}. Never include markdown or prose outside the JSON.",
+          "messages": [
+            {
+              "role": "user",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "={{$json[\"prompt\"]}}"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "name": "Claude Intent Classifier",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 1,
+      "position": [
+        900,
+        200
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "REPLACE_WITH_ANTHROPIC_HEADER_AUTH",
+          "name": "Anthropic Header Auth"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "const content = $json.content?.[0]?.text ?? '{}';\nlet parsed;\ntry {\n  parsed = JSON.parse(content);\n} catch (error) {\n  parsed = { intent: 'manual_review', confidence: 0, replyBody: '', labels: [], notes: `Parse failure: ${error.message}`, raw: content };\n}\nreturn [{ json: parsed }];"
+      },
+      "name": "Parse Claude JSON",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [
+        1140,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "const email = $items('Extract Email Context', 0, $itemIndex).json;\nconst classification = $json;\nreturn [{\n  json: {\n    ...email,\n    intent: classification.intent || 'manual_review',\n    confidence: classification.confidence ?? 0,\n    replyBody: classification.replyBody || '',\n    labels: classification.labels || [],\n    actionNotes: classification.notes || ''\n  }\n}];"
+      },
+      "name": "Merge Classification With Email",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [
+        1380,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "property": "={{$json[\"intent\"]}}",
+        "rules": [
+          {
+            "value": "respond"
+          },
+          {
+            "value": "move"
+          },
+          {
+            "value": "delete"
+          },
+          {
+            "value": "manual_review"
+          }
+        ]
+      },
+      "name": "Intent Router",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 2,
+      "position": [
+        1620,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "reply",
+        "messageId": "={{$json[\"messageId\"]}}",
+        "replyBody": "={{$json[\"replyBody\"]}}",
+        "additionalFields": {
+          "replyAll": true
+        }
+      },
+      "name": "Gmail Reply",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        20
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "addLabel",
+        "messageId": "={{$json[\"messageId\"]}}",
+        "labelIds": [
+          "Label_Answered"
+        ]
+      },
+      "name": "Apply Answered Label",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        20
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": [
+          {
+            "name": "action",
+            "value": "respond"
+          },
+          {
+            "name": "actionNotes",
+            "value": "={{$json[\"actionNotes\"] || 'Replied via Claude draft'}}"
+          }
+        ]
+      },
+      "name": "Summarize Respond Action",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        2340,
+        20
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "move",
+        "messageId": "={{$json[\"messageId\"]}}",
+        "labelIds": "={{$json[\"labels\"] && $json[\"labels\"].length ? $json[\"labels\"].join(',') : 'Label_FollowUp'}}"
+      },
+      "name": "Gmail Move",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        200
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": [
+          {
+            "name": "action",
+            "value": "move"
+          },
+          {
+            "name": "actionNotes",
+            "value": "={{$json[\"actionNotes\"] || 'Filed using Claude label suggestion'}}"
+          }
+        ]
+      },
+      "name": "Summarize Move Action",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "delete",
+        "messageId": "={{$json[\"messageId\"]}}"
+      },
+      "name": "Gmail Delete",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        380
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": [
+          {
+            "name": "action",
+            "value": "delete"
+          },
+          {
+            "name": "actionNotes",
+            "value": "={{$json[\"actionNotes\"] || 'Auto-removed based on policy'}}"
+          }
+        ]
+      },
+      "name": "Summarize Delete Action",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        380
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "addLabel",
+        "messageId": "={{$json[\"messageId\"]}}",
+        "labelIds": [
+          "Label_ManualReview"
+        ]
+      },
+      "name": "Manual Review Label",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        560
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": [
+          {
+            "name": "action",
+            "value": "manual_review"
+          },
+          {
+            "name": "actionNotes",
+            "value": "={{$json[\"actionNotes\"] || 'Flagged for human follow-up'}}"
+          }
+        ]
+      },
+      "name": "Summarize Manual Action",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "addLabel",
+        "messageId": "={{$json[\"messageId\"]}}",
+        "labelIds": [
+          "Label_Unhandled"
+        ]
+      },
+      "name": "Unhandled Label",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        1860,
+        740
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": false,
+        "values": [
+          {
+            "name": "action",
+            "value": "unhandled"
+          },
+          {
+            "name": "actionNotes",
+            "value": "No matching intent"
+          }
+        ]
+      },
+      "name": "Summarize Unhandled Action",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        2100,
+        740
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "horizon-heights/send",
+        "responseMode": "lastNode",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "name": "Outbound Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        200,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "functionCode": "return $input.all().map(item => {\n  const body = item.json.body || '';\n  return {\n    json: {\n      source: 'outbound',\n      to: item.json.to || item.json.recipient || '',\n      cc: item.json.cc || '',\n      subject: item.json.subject || 'Horizon Heights Update',\n      body: body,\n      message: body,\n      replyBody: body\n    }\n  };\n});"
+      },
+      "name": "Prepare Outbound Email",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 2,
+      "position": [
+        420,
+        600
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "message",
+        "operation": "send",
+        "toList": "={{$json[\"to\"]}}",
+        "subject": "={{$json[\"subject\"]}}",
+        "message": "={{$json[\"body\"]}}",
+        "additionalFields": {
+          "ccList": "={{$json[\"cc\"]}}"
+        }
+      },
+      "name": "Gmail Send Outbound",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2,
+      "position": [
+        660,
+        600
+      ],
+      "credentials": {
+        "gmailOAuth2Api": {
+          "id": "REPLACE_WITH_CREDENTIAL_ID",
+          "name": "Gmail OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "keepOnlySet": true,
+        "values": [
+          {
+            "name": "success",
+            "value": "Sent"
+          },
+          {
+            "name": "timestamp",
+            "value": "={{$now}}"
+          }
+        ]
+      },
+      "name": "Summarize Send Action",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 2,
+      "position": [
+        900,
+        600
+      ]
+    }
+  ],
+  "connections": {
+    "HH Gmail Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Full Gmail Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Full Gmail Message": {
+      "main": [
+        [
+          {
+            "node": "Extract Email Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract Email Context": {
+      "main": [
+        [
+          {
+            "node": "Claude Intent Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Claude Intent Classifier": {
+      "main": [
+        [
+          {
+            "node": "Parse Claude JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Claude JSON": {
+      "main": [
+        [
+          {
+            "node": "Merge Classification With Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Classification With Email": {
+      "main": [
+        [
+          {
+            "node": "Intent Router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Intent Router": {
+      "main": [
+        [
+          {
+            "node": "Gmail Reply",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gmail Move",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gmail Delete",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Manual Review Label",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Unhandled Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Reply": {
+      "main": [
+        [
+          {
+            "node": "Apply Answered Label",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Apply Answered Label": {
+      "main": [
+        [
+          {
+            "node": "Summarize Respond Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Move": {
+      "main": [
+        [
+          {
+            "node": "Summarize Move Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Delete": {
+      "main": [
+        [
+          {
+            "node": "Summarize Delete Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Manual Review Label": {
+      "main": [
+        [
+          {
+            "node": "Summarize Manual Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Unhandled Label": {
+      "main": [
+        [
+          {
+            "node": "Summarize Unhandled Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Outbound Webhook": {
+      "main": [
+        [
+          {
+            "node": "Prepare Outbound Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Outbound Email": {
+      "main": [
+        [
+          {
+            "node": "Gmail Send Outbound",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail Send Outbound": {
+      "main": [
+        [
+          {
+            "node": "Summarize Send Action",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {},
+  "versionId": "00000000-0000-0000-0000-000000000000"
+}
