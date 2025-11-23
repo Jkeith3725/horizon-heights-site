@@ -179,16 +179,22 @@
             // Inline Gallery Data to prevent loading issues
             const galleryData = {
                 "exterior": [
+                    "assets/images/gallery/imports/kim_ext_1.jpg",
+                    "assets/images/gallery/imports/joann_ext_1.jpg",
                     "assets/images/gallery/exterior/residential-1.png"
                 ],
                 "interior": [
+                    "assets/images/gallery/imports/kim_int_1.jpg",
+                    "assets/images/gallery/imports/joann_int_1.jpg",
                     "assets/images/gallery/interior/kitchen.png",
                     "assets/images/gallery/interior/living-room.png"
                 ],
                 "land": [
+                    "assets/images/gallery/imports/tyler_land_1.jpg",
                     "assets/images/gallery/land/scenic-1.png"
                 ],
                 "commercial": [
+                    "assets/images/gallery/imports/traci_comm_1.jpg",
                     "assets/images/gallery/commercial/commercial-1.png"
                 ],
                 "events": [
@@ -238,7 +244,6 @@
                                 const img = document.createElement('img');
                                 img.src = src;
                                 img.alt = `${categoryTitles[category]} photo by Horizon Heights`;
-                                img.loading = 'lazy';
                                 img.onclick = () => openLightbox(src);
 
                                 card.appendChild(img);
