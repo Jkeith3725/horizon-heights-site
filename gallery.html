@@ -404,7 +404,28 @@
     </footer>
 
     <!-- Optimization: Defer-loaded + minified JS keeps interactivity async -->
-    <script src="assets/js/main.js" defer></script>
+    <!-- Optimization: Defer-loaded + minified JS keeps interactivity async -->
+    <script src="assets/js/main.js?v=2" defer></script>
+    <script>
+        // Fallback for Mobile Menu if main.js fails
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (!window.hhMainLoaded) {
+                    console.warn('Main JS failed to load. Activating fallback menu.');
+                    const burger = document.querySelector('.hh-burger');
+                    const nav = document.querySelector('.hh-nav');
+                    if (burger && nav) {
+                        burger.addEventListener('click', () => {
+                            nav.classList.toggle('open');
+                            burger.classList.toggle('is-active');
+                            const expanded = nav.classList.contains('open');
+                            burger.setAttribute('aria-expanded', expanded);
+                        });
+                    }
+                }
+            }, 500);
+        });
+    </script>
 
     <!-- Lightbox Markup -->
     <div id="hh-lightbox" class="hh-lightbox" aria-modal="true" role="dialog">

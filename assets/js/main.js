@@ -377,3 +377,5 @@ if (lightbox && lightboxImg && lightboxClose) {
         if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
     });
 }
+
+window.hhMainLoaded = true;
