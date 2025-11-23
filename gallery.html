@@ -175,15 +175,30 @@
             <!-- Sections will be populated by JS -->
         </div>
 
-        <script src="assets/js/gallery-data.js?v=2"></script>
         <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                console.log('Gallery script loaded. Checking data...');
-                const galleryContainer = document.getElementById('gallery-sections');
+            // Inline Gallery Data to prevent loading issues
+            const galleryData = {
+                "exterior": [
+                    "assets/images/gallery/exterior/residential-1.png"
+                ],
+                "interior": [
+                    "assets/images/gallery/interior/kitchen.png",
+                    "assets/images/gallery/interior/living-room.png"
+                ],
+                "land": [
+                    "assets/images/gallery/land/scenic-1.png"
+                ],
+                "commercial": [
+                    "assets/images/gallery/commercial/commercial-1.png"
+                ],
+                "events": [
+                    "assets/images/gallery/events/festival.png"
+                ]
+            };
 
-                // Check window.galleryData
-                const data = window.galleryData || (typeof galleryData !== 'undefined' ? galleryData : null);
-                console.log('Gallery Data:', data);
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('Initializing gallery with inline data...');
+                const galleryContainer = document.getElementById('gallery-sections');
 
                 // Define display names for categories
                 const categoryTitles = {
@@ -197,9 +212,9 @@
                 // Order to display sections
                 const displayOrder = ['exterior', 'interior', 'land', 'commercial', 'events'];
 
-                if (data) {
+                if (galleryData) {
                     displayOrder.forEach(category => {
-                        const images = data[category];
+                        const images = galleryData[category];
                         if (images && images.length > 0) {
                             // Create section
                             const section = document.createElement('section');
@@ -236,7 +251,7 @@
                         }
                     });
                 } else {
-                    galleryContainer.innerHTML = '<div class="hh-container"><p>Gallery is updating...</p></div>';
+                    galleryContainer.innerHTML = '<div class="hh-container"><p>Gallery data missing.</p></div>';
                 }
             });
 
