@@ -259,13 +259,24 @@
                             const grid = document.createElement('div');
                             grid.className = 'hh-gallery-grid';
 
-                            images.forEach(src => {
-                                const card = document.createElement('figure');
+                            images.forEach((src, index) => {
+                                const card = document.createElement('article');
                                 card.className = 'hh-gallery-card';
 
                                 const img = document.createElement('img');
                                 img.src = src;
-                                img.alt = `${categoryTitles[category]} photo by Horizon Heights`;
+
+                                // Generate SEO-optimized alt text based on category
+                                const altTextMap = {
+                                    'exterior': `Professional drone photography of exterior property ${index + 1} in Marietta Ohio`,
+                                    'interior': `HDR real estate photography of interior space ${index + 1} for listing in Mid-Ohio Valley`,
+                                    'land': `Aerial drone photography of large land parcel ${index + 1} in Washington County Ohio`,
+                                    'commercial': `Commercial property photography and videography ${index + 1} in Marietta Ohio`,
+                                    'events': `Professional event photography and coverage ${index + 1} in Mid-Ohio Valley`
+                                };
+
+                                img.alt = altTextMap[category] || `Horizon Heights Productions portfolio image ${index + 1}`;
+                                img.decoding = 'async';
                                 img.onclick = () => openLightbox(src);
 
                                 card.appendChild(img);
