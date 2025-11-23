@@ -45,7 +45,7 @@ def update_gallery():
             gallery_data[category] = []
         
     # Generate JavaScript content
-    js_content = f"const galleryData = {json.dumps(gallery_data, indent=4)};\n"
+    js_content = f"window.galleryData = {json.dumps(gallery_data, indent=4)};\n"
     
     # Write to output file
     output_path = os.path.join(project_root, OUTPUT_FILE)

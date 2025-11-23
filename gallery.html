@@ -175,10 +175,15 @@
             <!-- Sections will be populated by JS -->
         </div>
 
-        <script src="assets/js/gallery-data.js"></script>
+        <script src="assets/js/gallery-data.js?v=2"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
+                console.log('Gallery script loaded. Checking data...');
                 const galleryContainer = document.getElementById('gallery-sections');
+
+                // Check window.galleryData
+                const data = window.galleryData || (typeof galleryData !== 'undefined' ? galleryData : null);
+                console.log('Gallery Data:', data);
 
                 // Define display names for categories
                 const categoryTitles = {
@@ -192,9 +197,9 @@
                 // Order to display sections
                 const displayOrder = ['exterior', 'interior', 'land', 'commercial', 'events'];
 
-                if (typeof galleryData !== 'undefined') {
+                if (data) {
                     displayOrder.forEach(category => {
-                        const images = galleryData[category];
+                        const images = data[category];
                         if (images && images.length > 0) {
                             // Create section
                             const section = document.createElement('section');

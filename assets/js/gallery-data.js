@@ -1,4 +1,4 @@
-const galleryData = {
+window.galleryData = {
     "exterior": [
         "assets/images/gallery/exterior/residential-1.png"
     ],
