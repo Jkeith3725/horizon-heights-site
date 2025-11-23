@@ -250,15 +250,14 @@
                             galleryContainer.appendChild(section);
                         }
                     });
-                });
 
-            // Fallback if no sections were created
-            if (galleryContainer.children.length === 0) {
-                galleryContainer.innerHTML = '<div class="hh-container"><p>No images found in gallery data.</p></div>';
-            }
+                    // Fallback if no sections were created
+                    if (galleryContainer.children.length === 0) {
+                        galleryContainer.innerHTML = '<div class="hh-container"><p>No images found in gallery data.</p></div>';
+                    }
                 } else {
-                galleryContainer.innerHTML = '<div class="hh-container"><p>Gallery data missing.</p></div>';
-            }
+                    galleryContainer.innerHTML = '<div class="hh-container"><p>Gallery data missing.</p></div>';
+                }
             });
 
             // Lightbox Logic
