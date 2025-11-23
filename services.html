@@ -36,35 +36,134 @@
     <!-- Optimization: Minified CSS is prioritized to reduce render-blocking bytes -->
     <link rel="stylesheet" href="assets/css/styles.css">
 
-    <script type="application/ld+json">{
-        "@context":"https://schema.org",
-        "@type":"LocalBusiness",
-        "name":"Horizon Heights Productions",
-        "url":"https://www.horizonheightsproductions.com/",
-        "image":"https://www.horizonheightsproductions.com/static/og-hero.jpg",
-        "slogan":"Elevate Your Visuals",
-        "description":"Real estate drone videography and photography for residential homes and large land in Marietta, Ohio and the Mid-Ohio Valley.",
-        "address":{"@type":"PostalAddress","addressLocality":"Marietta","addressRegion":"OH","addressCountry":"US"},
-        "areaServed":"Mid-Ohio Valley",
-        "telephone":"+1-304-543-3081",
-        "priceRange": "$$",
-        "openingHours": "Mo-Fr 09:00-17:00",
-        "sameAs": [
-            "https://www.facebook.com/horizonheightsproductions",
-            "https://www.instagram.com/horizonheightsproductions"
-        ]
-    }</script>
-    <script type="application/ld+json">{
-        "@context":"https://schema.org",
-        "@type":"Service",
-        "name":"Real Estate Drone Photography",
-        "provider": {
-            "@type": "LocalBusiness",
-            "name": "Horizon Heights Productions"
+    <!-- Service-Specific Schemas -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Drone Photography & Aerial Videography Services",
+      "description": "Professional FAA Part 107 certified drone photography and aerial videography services in Marietta, Ohio and the Mid-Ohio Valley. Stunning aerial photos and cinematic video for real estate, events, land, and commercial projects.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://horizonheightsproductions.com/#organization"
+      },
+      "serviceType": "Drone Photography",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.4192",
+          "longitude": "-81.4549"
         },
-        "areaServed": "Mid-Ohio Valley",
-        "description": "High-quality aerial and ground photography for real estate listings."
-    }</script>
+        "geoRadius": "80467"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "150",
+        "highPrice": "675",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Real Estate Photography Services",
+      "description": "Professional real estate photography in Marietta, Ohio. HDR interior and exterior photos, video tours, drone aerials, and Matterport 3D virtual tours to help your listings sell faster.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://horizonheightsproductions.com/#organization"
+      },
+      "serviceType": "Real Estate Photography",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.4192",
+          "longitude": "-81.4549"
+        },
+        "geoRadius": "80467"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "275",
+        "highPrice": "675",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Social Media Management & Content Creation",
+      "description": "Social media management and video content creation for businesses in the Mid-Ohio Valley. Professional reels, promotional videos, and ongoing social media marketing.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://horizonheightsproductions.com/#organization"
+      },
+      "serviceType": "Social Media Management",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.4192",
+          "longitude": "-81.4549"
+        },
+        "geoRadius": "80467"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Event Photography & Videography",
+      "description": "Professional event photography and videography in Marietta, Ohio and the Mid-Ohio Valley. Coverage for weddings, corporate events, festivals, and special occasions.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "@id": "https://horizonheightsproductions.com/#organization"
+      },
+      "serviceType": "Event Photography",
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": "39.4192",
+          "longitude": "-81.4549"
+        },
+        "geoRadius": "80467"
+      }
+    }
+    </script>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://horizonheightsproductions.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://horizonheightsproductions.com/services.html"
+        }
+      ]
+    }
+    </script>
+
+    <!-- Site Navigation Schema -->>
     <script type="application/ld+json">{
         "@context":"https://schema.org",
         "@type":"ItemList",
