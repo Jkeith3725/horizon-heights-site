@@ -1,8 +1,18 @@
-const galleryImages = [
-    "assets/images/gallery/commercial-1.png",
-    "assets/images/gallery/gallery-1.jpg",
-    "assets/images/gallery/gallery-2.jpg",
-    "assets/images/gallery/gallery-3.jpg",
-    "assets/images/gallery/residential-1.png",
-    "assets/images/gallery/scenic-1.png"
-];
+const galleryData = {
+    "exterior": [
+        "assets/images/gallery/exterior/residential-1.png"
+    ],
+    "interior": [
+        "assets/images/gallery/interior/kitchen.png",
+        "assets/images/gallery/interior/living-room.png"
+    ],
+    "land": [
+        "assets/images/gallery/land/scenic-1.png"
+    ],
+    "commercial": [
+        "assets/images/gallery/commercial/commercial-1.png"
+    ],
+    "events": [
+        "assets/images/gallery/events/festival.png"
+    ]
+};

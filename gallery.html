@@ -170,49 +170,93 @@
     <main id="content">
 
 
-        <section id="gallery" class="hh-section hh-section--gallery reveal" aria-label="Gallery Preview">
-            <div class="hh-container">
-                <h3>Gallery Preview</h3>
-                <p>Curated highlights will showcase how Horizon Heights transitions from interiors to expansive aerials.
-                    Swap in your imagery and reels when they are ready.</p>
-                <div id="hh-dynamic-gallery" class="hh-gallery-grid">
-                    <!-- Images will be injected here by JS -->
-                </div>
-            </div>
-        </section>
+        <!-- Gallery Sections -->
+        <div id="gallery-sections">
+            <!-- Sections will be populated by JS -->
+        </div>
 
-        <!-- Gallery Automation Scripts -->
         <script src="assets/js/gallery-data.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
-                const galleryContainer = document.getElementById('hh-dynamic-gallery');
-                if (galleryContainer && typeof galleryImages !== 'undefined') {
-                    galleryImages.forEach(imagePath => {
-                        const figure = document.createElement('figure');
-                        figure.className = 'hh-gallery-card';
+                const galleryContainer = document.getElementById('gallery-sections');
 
-                        const img = document.createElement('img');
-                        img.src = imagePath;
-                        img.alt = "Horizon Heights Gallery Image";
-                        img.loading = "lazy";
-                        img.decoding = "async";
+                // Define display names for categories
+                const categoryTitles = {
+                    'exterior': 'Residential Exterior',
+                    'interior': 'Residential Interior',
+                    'land': 'Large Land & Scenic',
+                    'commercial': 'Commercial & Business',
+                    'events': 'Events & Community'
+                };
 
-                        // Add click event for lightbox (re-using existing logic if possible, or adding inline)
-                        img.style.cursor = "url('assets/images/drone-cursor.png') 16 16, pointer";
-                        img.addEventListener('click', () => {
-                            const lightbox = document.getElementById('hh-lightbox');
-                            const lightboxImg = document.getElementById('hh-lightbox-img');
-                            if (lightbox && lightboxImg) {
-                                lightboxImg.src = img.src;
-                                lightbox.classList.add('open');
-                                document.body.style.overflow = 'hidden';
-                            }
-                        });
+                // Order to display sections
+                const displayOrder = ['exterior', 'interior', 'land', 'commercial', 'events'];
 
-                        figure.appendChild(img);
-                        galleryContainer.appendChild(figure);
+                if (typeof galleryData !== 'undefined') {
+                    displayOrder.forEach(category => {
+                        const images = galleryData[category];
+                        if (images && images.length > 0) {
+                            // Create section
+                            const section = document.createElement('section');
+                            section.className = 'hh-section hh-section--gallery reveal';
+                            section.setAttribute('aria-label', categoryTitles[category]);
+
+                            const container = document.createElement('div');
+                            container.className = 'hh-container';
+
+                            const title = document.createElement('h3');
+                            title.textContent = categoryTitles[category];
+                            container.appendChild(title);
+
+                            const grid = document.createElement('div');
+                            grid.className = 'hh-gallery-grid';
+
+                            images.forEach(src => {
+                                const card = document.createElement('figure');
+                                card.className = 'hh-gallery-card';
+
+                                const img = document.createElement('img');
+                                img.src = src;
+                                img.alt = `${categoryTitles[category]} photo by Horizon Heights`;
+                                img.loading = 'lazy';
+                                img.onclick = () => openLightbox(src);
+
+                                card.appendChild(img);
+                                grid.appendChild(card);
+                            });
+
+                            container.appendChild(grid);
+                            section.appendChild(container);
+                            galleryContainer.appendChild(section);
+                        }
                     });
+                } else {
+                    galleryContainer.innerHTML = '<div class="hh-container"><p>Gallery is updating...</p></div>';
                 }
+            });
+
+            // Lightbox Logic
+            const lightbox = document.getElementById('hh-lightbox');
+            const lightboxImg = document.getElementById('hh-lightbox-img');
+            const lightboxClose = document.getElementById('hh-lightbox-close');
+
+            function openLightbox(src) {
+                lightboxImg.src = src;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
             });
         </script>
 

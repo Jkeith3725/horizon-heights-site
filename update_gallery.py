@@ -16,31 +16,44 @@ def update_gallery():
         print(f"Error: Gallery directory not found at {gallery_path}")
         return
 
-    # Find all image files
-    images = []
-    try:
-        for filename in os.listdir(gallery_path):
-            if filename.lower().endswith(VALID_EXTENSIONS):
-                # Store relative path for the web
-                rel_path = f"{GALLERY_DIR}/{filename}"
-                images.append(rel_path)
+    # Categories to scan for (matching folder names)
+    categories = ['exterior', 'interior', 'land', 'commercial', 'events']
+    gallery_data = {}
+
+    total_images = 0
+
+    for category in categories:
+        category_path = os.path.join(gallery_path, category)
+        if os.path.exists(category_path):
+            images = []
+            try:
+                for filename in os.listdir(category_path):
+                    if filename.lower().endswith(VALID_EXTENSIONS):
+                        # Store relative path for the web
+                        rel_path = f"{GALLERY_DIR}/{category}/{filename}"
+                        images.append(rel_path)
+                
+                # Sort images
+                images.sort()
+                gallery_data[category] = images
+                total_images += len(images)
+                print(f"Found {len(images)} images in {category}")
+            except Exception as e:
+                print(f"Error scanning {category}: {e}")
+        else:
+            print(f"Warning: Category folder '{category}' not found")
+            gallery_data[category] = []
         
-        # Sort images to ensure consistent order (optional, alphabetical)
-        images.sort()
+    # Generate JavaScript content
+    js_content = f"const galleryData = {json.dumps(gallery_data, indent=4)};\n"
+    
+    # Write to output file
+    output_path = os.path.join(project_root, OUTPUT_FILE)
+    with open(output_path, 'w') as f:
+        f.write(js_content)
         
-        # Generate JavaScript content
-        js_content = f"const galleryImages = {json.dumps(images, indent=4)};\n"
-        
-        # Write to output file
-        output_path = os.path.join(project_root, OUTPUT_FILE)
-        with open(output_path, 'w') as f:
-            f.write(js_content)
-            
-        print(f"Success! Found {len(images)} images.")
-        print(f"Updated {OUTPUT_FILE}")
-        
-    except Exception as e:
-        print(f"An error occurred: {e}")
+    print(f"Success! Found {total_images} total images.")
+    print(f"Updated {OUTPUT_FILE}")
 
 if __name__ == "__main__":
     print("Scanning for new gallery images...")
