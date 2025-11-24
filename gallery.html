@@ -266,13 +266,21 @@
                                 const img = document.createElement('img');
                                 img.src = src;
 
+                                // Rotating list of target towns for maximum local SEO coverage
+                                const towns = [
+                                    "Marietta Ohio", "Parkersburg West Virginia", "Vienna WV",
+                                    "Williamstown WV", "Belpre Ohio", "Athens Ohio",
+                                    "St. Marys WV", "Mineral Wells WV"
+                                ];
+                                const town = towns[index % towns.length];
+
                                 // Generate SEO-optimized alt text based on category
                                 const altTextMap = {
-                                    'exterior': `Professional drone photography of exterior property ${index + 1} in Marietta Ohio`,
-                                    'interior': `HDR real estate photography of interior space ${index + 1} for listing in Mid-Ohio Valley`,
-                                    'land': `Aerial drone photography of large land parcel ${index + 1} in Washington County Ohio`,
-                                    'commercial': `Commercial property photography and videography ${index + 1} in Marietta Ohio`,
-                                    'events': `Professional event photography and coverage ${index + 1} in Mid-Ohio Valley`
+                                    'exterior': `Professional drone photography of exterior property in ${town}`,
+                                    'interior': `HDR real estate photography of interior space for listing in ${town}`,
+                                    'land': `Aerial drone photography of large land parcel in ${town}`,
+                                    'commercial': `Commercial property photography and videography in ${town}`,
+                                    'events': `Professional event photography and coverage in ${town}`
                                 };
 
                                 img.alt = altTextMap[category] || `Horizon Heights Productions portfolio image ${index + 1}`;
