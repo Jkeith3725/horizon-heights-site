@@ -1404,7 +1404,34 @@ p {
     }
 }
 
-/* ===== NAVIGATION IMPROVEMENTS ===== */
+/* ===== GALLERY IMPROVEMENTS ===== */
+.hh-gallery-section {
+    padding: 5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Alternating backgrounds for clear separation */
+.hh-gallery-section:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.hh-gallery-section h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--hh-ember);
+    display: inline-block;
+    color: var(--hh-text);
+}
+
+.hh-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
 /* Link Underline Animation */
 .hh-link::after {
     content: '';
