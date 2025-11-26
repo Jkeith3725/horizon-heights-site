@@ -348,35 +348,7 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
 
 revealElements.forEach(el => revealObserver.observe(el));
 
-// Lightbox
-const lightbox = document.getElementById('hh-lightbox');
-const lightboxImg = document.getElementById('hh-lightbox-img');
-const lightboxClose = document.getElementById('hh-lightbox-close');
-
-if (lightbox && lightboxImg && lightboxClose) {
-    document.querySelectorAll('.hh-gallery-card img').forEach(img => {
-        img.style.cursor = "url('assets/images/drone-cursor.png') 16 16, pointer";
-        img.addEventListener('click', () => {
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-    });
-
-    const closeLightbox = () => {
-        lightbox.classList.remove('open');
-        document.body.style.overflow = '';
-    };
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeLightbox();
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
-    });
-}
+// Lightbox logic consolidated below
 
 window.hhMainLoaded = true;
 
