@@ -573,6 +573,38 @@ p {
     }
 }
 
+/* Video Hero Background */
+.hh-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hh-hero-overlay-dark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 7, 21, 0.5);
+    /* Dark overlay for text readability */
+    z-index: 1;
+}
+
+.hh-hero-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
 .hh-cosmic {
     position: absolute;
     inset: 0;

@@ -164,8 +164,10 @@
 
     <section class="hh-hero" aria-label="Hero">
         <div class="hh-hero-media">
-            <div class="hh-hero-still" role="presentation"
-                style="background-image: url('assets/images/hero-bg.jpg'); opacity: 0.6;"></div>
+            <video class="hh-hero-video" autoplay muted loop playsinline poster="assets/video/hero-poster.jpg">
+                <source src="assets/video/hero-background.mp4" type="video/mp4">
+            </video>
+            <div class="hh-hero-overlay-dark"></div>
         </div>
         <div class="hh-cosmic" aria-hidden="true">
             <!-- Optimization: Lightweight poster ensures video placeholder is cached -->
