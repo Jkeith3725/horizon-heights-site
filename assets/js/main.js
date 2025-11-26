@@ -379,3 +379,179 @@ if (lightbox && lightboxImg && lightboxClose) {
 }
 
 window.hhMainLoaded = true;
+
+/* ===== SCROLL INDICATOR ===== */
+const scrollIndicator = document.querySelector('.hh-scroll-down');
+if (scrollIndicator) {
+    scrollIndicator.addEventListener('click', () => {
+        document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            scrollIndicator.classList.add('hidden');
+        } else {
+            scrollIndicator.classList.remove('hidden');
+        }
+    }, { passive: true });
+}
+
+/* ===== BUTTON RIPPLE EFFECT ===== */
+document.querySelectorAll('.hh-cta, .hh-ghost').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const ripple = document.createElement('span');
+        ripple.classList.add('hh-ripple');
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+    });
+});
+
+/* ===== HERO ENTRANCE ANIMATIONS ===== */
+document.addEventListener('DOMContentLoaded', () => {
+    const heroElements = [
+        { sel: '.hh-hero h1', delay: '0.6s' },
+        { sel: '.hh-hero-sub', delay: '0.8s' },
+        { sel: '.hh-hero-ctas', delay: '1.3s' }
+    ];
+
+    heroElements.forEach(item => {
+        const el = document.querySelector(item.sel);
+        if (el) {
+            el.classList.add('hh-hero-animate');
+            el.style.animationDelay = item.delay;
+        }
+    });
+
+    // Stagger highlights
+    const highlights = document.querySelectorAll('.hh-hero-highlights li');
+    highlights.forEach((li, index) => {
+        li.classList.add('hh-hero-animate');
+        li.style.animationDelay = `${1 + (index * 0.1)}s`;
+    });
+});
+
+/* ===== LIGHTBOX NAVIGATION ===== */
+const lightbox = document.getElementById('hh-lightbox');
+const lightboxImg = document.getElementById('hh-lightbox-img');
+const galleryImages = document.querySelectorAll('.hh-gallery-card img, .hh-gallery-item img');
+let currentImageIndex = 0;
+
+if (lightbox && galleryImages.length > 0) {
+    const updateLightbox = (index) => {
+        currentImageIndex = (index + galleryImages.length) % galleryImages.length;
+        const img = galleryImages[currentImageIndex];
+
+        // Fade out
+        lightboxImg.style.opacity = '0';
+
+        setTimeout(() => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            document.querySelector('.hh-lightbox-counter').textContent =
+                `${currentImageIndex + 1} / ${galleryImages.length}`;
+            // Fade in
+            lightboxImg.style.opacity = '1';
+        }, 200);
+    };
+
+    // Controls
+    document.querySelector('.hh-lightbox-prev')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateLightbox(currentImageIndex - 1);
+    });
+
+    document.querySelector('.hh-lightbox-next')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateLightbox(currentImageIndex + 1);
+    });
+
+    // Keyboard
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        if (e.key === 'ArrowLeft') updateLightbox(currentImageIndex - 1);
+        if (e.key === 'ArrowRight') updateLightbox(currentImageIndex + 1);
+    });
+
+    // Swipe
+    let touchStartX = 0;
+    lightbox.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX, { passive: true });
+    lightbox.addEventListener('touchend', e => {
+        if (touchStartX - e.changedTouches[0].screenX > 50) updateLightbox(currentImageIndex + 1);
+        if (e.changedTouches[0].screenX - touchStartX > 50) updateLightbox(currentImageIndex - 1);
+    }, { passive: true });
+
+    // Override existing click handlers to track index
+    galleryImages.forEach((img, index) => {
+        img.parentElement.addEventListener('click', () => {
+            currentImageIndex = index;
+            updateLightbox(index);
+        });
+    });
+}
+
+/* ===== IMAGE LAZY LOADING ===== */
+const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            img.onload = () => {
+                img.parentElement.classList.remove('hh-img-loading');
+                img.classList.add('hh-img-loaded');
+            };
+            observer.unobserve(img);
+        }
+    });
+});
+
+document.querySelectorAll('.hh-gallery-card img').forEach(img => {
+    const src = img.src;
+    img.removeAttribute('src');
+    img.dataset.src = src;
+    img.parentElement.classList.add('hh-img-loading');
+    imageObserver.observe(img);
+});
+
+/* ===== TESTIMONIAL CAROUSEL ===== */
+const slides = document.querySelectorAll('.hh-testimonial-card');
+const dotsContainer = document.querySelector('.hh-carousel-dots');
+let activeSlide = 0;
+let slideInterval;
+
+if (slides.length > 0 && dotsContainer) {
+    // Create dots
+    slides.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.className = `hh-dot ${idx === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => goToSlide(idx));
+        dotsContainer.appendChild(dot);
+    });
+
+    const goToSlide = (n) => {
+        slides[activeSlide].classList.remove('active');
+        document.querySelectorAll('.hh-dot')[activeSlide].classList.remove('active');
+
+        activeSlide = (n + slides.length) % slides.length;
+
+        slides[activeSlide].classList.add('active');
+        document.querySelectorAll('.hh-dot')[activeSlide].classList.add('active');
+    };
+
+    const startSlideShow = () => {
+        slideInterval = setInterval(() => goToSlide(activeSlide + 1), 8000);
+    };
+
+    const stopSlideShow = () => clearInterval(slideInterval);
+
+    document.querySelector('.hh-carousel').addEventListener('mouseenter', stopSlideShow);
+    document.querySelector('.hh-carousel').addEventListener('mouseleave', startSlideShow);
+
+    startSlideShow();
+}

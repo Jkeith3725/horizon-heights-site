@@ -331,7 +331,8 @@
   <section class="hh-hero" aria-label="Hero">
     <div class="hh-hero-media">
       <div class="hh-hero-still" role="presentation"
-        style="background-image: url('assets/images/gallery/land/scenic-1.png'); opacity: 0.6;"></div>
+        style="background-image: url('assets/images/gallery/land/mid-ohio-valley-riverfront-scenic-drone-shot.png'); opacity: 0.6;">
+      </div>
     </div>
     <div class="hh-cosmic" aria-hidden="true">
       <!-- Optimization: Lightweight poster ensures video placeholder is cached -->
@@ -359,6 +360,12 @@
       <div class="hh-hero-ctas">
         <a class="hh-cta" href="contact.html">Book Now</a>
         <a class="hh-ghost" href="services.html">See Pricing</a>
+      </div>
+      <div class="hh-scroll-down" aria-label="Scroll down to content">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+        </svg>
       </div>
     </div>
   </section>
@@ -393,7 +400,40 @@
       </div>
     </section>
 
-
+    <section id="testimonials" class="hh-section reveal" aria-label="Testimonials">
+      <div class="hh-container">
+        <div class="hh-carousel">
+          <div class="hh-carousel-track">
+            <article class="hh-testimonial-card active">
+              <div class="hh-stars">★★★★★</div>
+              <p>"Horizon Heights delivered exactly what we needed for our luxury listing. The drone tour was cinematic
+                and smooth."</p>
+              <footer>
+                <strong>Sarah Jenkins</strong><br>
+                <span style="opacity: 0.7; font-size: 0.9rem;">Realtor, Century 21</span>
+              </footer>
+            </article>
+            <article class="hh-testimonial-card">
+              <div class="hh-stars">★★★★★</div>
+              <p>"Fast turnaround and incredible quality. The twilight shots made the property look magical."</p>
+              <footer>
+                <strong>Mike Ross</strong><br>
+                <span style="opacity: 0.7; font-size: 0.9rem;">Developer, Ross Construction</span>
+              </footer>
+            </article>
+            <article class="hh-testimonial-card">
+              <div class="hh-stars">★★★★★</div>
+              <p>"Professional, insured, and easy to work with. Highly recommended for any commercial project."</p>
+              <footer>
+                <strong>Elena Rodriguez</strong><br>
+                <span style="opacity: 0.7; font-size: 0.9rem;">Marketing Director, City Tourism</span>
+              </footer>
+            </article>
+          </div>
+          <div class="hh-carousel-dots"></div>
+        </div>
+      </div>
+    </section>
 
     <section id="about" class="hh-section hh-section--about reveal" aria-label="About Us">
       <div class="hh-container hh-about">
@@ -409,7 +449,7 @@
             confident from kickoff to delivery.</p>
         </div>
         <figure class="hh-about-media">
-          <img src="assets/images/gallery/exterior/residential-1.png"
+          <img src="assets/images/gallery/exterior/vienna-wv-modern-residential-property.png"
             alt="Horizon Heights Productions team - professional drone photography and real estate media service in Marietta Ohio"
             loading="lazy" decoding="async">
           <figcaption>Safety-focused aerial storytelling across the Mid-Ohio Valley.</figcaption>
@@ -552,7 +592,7 @@
           <svg class="hh-social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="#ECF1FF" width="32"
             height="32">
             <path
-              d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z" />
+              d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 0 1 0 3 3z" />
           </svg>
         </a>
       </div>
@@ -587,6 +627,17 @@
   <!-- Lightbox Markup -->
   <div id="hh-lightbox" class="hh-lightbox" aria-modal="true" role="dialog">
     <button id="hh-lightbox-close" class="hh-lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="hh-lightbox-nav hh-lightbox-prev" aria-label="Previous image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+    <button class="hh-lightbox-nav hh-lightbox-next" aria-label="Next image">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
+    <div class="hh-lightbox-counter"></div>
     <img id="hh-lightbox-img" class="hh-lightbox-img" src="" alt="">
   </div>
 </body>
