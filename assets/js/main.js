@@ -336,10 +336,15 @@ document.addEventListener('visibilitychange', () => {
 });
 
 // Scroll Reveal
+// Scroll Reveal
 const revealElements = document.querySelectorAll('.reveal');
+// Initial hide (fallback support)
+revealElements.forEach(el => el.classList.add('reveal-hidden'));
+
 const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-hidden');
             entry.target.classList.add('active');
             observer.unobserve(entry.target);
         }

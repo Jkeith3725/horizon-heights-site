@@ -67,9 +67,14 @@ a:focus {
 
 /* ---------- Scroll Reveal ---------- */
 .reveal {
+    opacity: 1;
+    transform: none;
+    transition: all 0.8s ease;
+}
+
+.reveal.reveal-hidden {
     opacity: 0;
     transform: translateY(30px);
-    transition: opacity 0.8s var(--hh-ease), transform 0.8s var(--hh-ease);
 }
 
 .reveal.active {
@@ -1312,7 +1317,9 @@ p {
         animation: none !important;
         transition: none !important;
     }
-}/* ===== HERO MICRO-INTERACTIONS ===== */
+}
+
+/* ===== HERO MICRO-INTERACTIONS ===== */
 .hh-hero-animate {
     opacity: 0;
     transform: translateY(20px);
