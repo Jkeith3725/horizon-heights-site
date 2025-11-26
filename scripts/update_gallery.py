@@ -8,7 +8,7 @@ VALID_EXTENSIONS = ('.jpg', '.jpeg', '.png', '.webp', '.gif')
 
 def update_gallery():
     # Get the absolute path to the project root (where this script is located)
-    project_root = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     gallery_path = os.path.join(project_root, GALLERY_DIR)
     
     # Check if gallery directory exists
