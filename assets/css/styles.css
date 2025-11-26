@@ -602,10 +602,13 @@ p {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    z-index: -1;
+    z-index: 0;
+    /* Brought forward from -1 */
 }
 
 .hh-cosmic {
+    display: none;
+    /* Hidden to reveal video background */
     position: absolute;
     inset: 0;
     overflow: hidden;
