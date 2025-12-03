@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Heights Productions | Select Your Service</title>
+    <meta name="description"
+        content="Premium drone and media services. Select your path: Real Estate, Commercial, Social Media, or Events.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Logo Overlay -->
+    <div class="brand-overlay">
+        <img src="assets/logo.jpg" alt="Horizon Heights Productions" class="logo-img">
+    </div>
+
+    <!-- Main Service Grid -->
+    <main class="service-gateway">
+
+        <!-- Real Estate -->
+        <div class="service-panel" id="panel-real-estate">
+            <div class="panel-bg" style="background-image: url('assets/real_estate.png');">
+            </div>
+            <div class="panel-content">
+                <h2>Real Estate</h2>
+                <p>Cinematic Tours & Aerials</p>
+                <button class="btn-open-modal" data-modal="modal-real-estate">Inquire Now</button>
+            </div>
+            <div class="panel-overlay"></div>
+        </div>
+
+        <!-- Commercial -->
+        <div class="service-panel" id="panel-commercial">
+            <div class="panel-bg" style="background-image: url('assets/commercial.png');">
+            </div>
+            <div class="panel-content">
+                <h2>Small Business Advertisement</h2>
+                <p>Brand Films & Production</p>
+                <button class="btn-open-modal" data-modal="modal-commercial">Start Project</button>
+            </div>
+            <div class="panel-overlay"></div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="service-panel" id="panel-social">
+            <!-- Updated Social Media Image -->
+            <div class="panel-bg" style="background-image: url('assets/social_media.png');"></div>
+            <div class="panel-content">
+                <h2>Social Media</h2>
+                <p>Content Management & Growth</p>
+                <button class="btn-open-modal" data-modal="modal-social">Grow Your Brand</button>
+            </div>
+            <div class="panel-overlay"></div>
+        </div>
+
+        <!-- Events -->
+        <div class="service-panel" id="panel-events">
+            <!-- Updated Community Event Image -->
+            <div class="panel-bg" style="background-image: url('assets/events.png');"></div>
+            <div class="panel-content">
+                <h2>Events</h2>
+                <p>Weddings & Community Gatherings</p>
+                <button class="btn-open-modal" data-modal="modal-events">Capture the Moment</button>
+            </div>
+            <div class="panel-overlay"></div>
+        </div>
+
+    </main>
+
+    <!-- Modals -->
+
+    <!-- Real Estate Modal -->
+    <div class="modal-backdrop" id="modal-real-estate">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Real Estate Inquiry</h3>
+            <form name="real-estate-inquiry" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="real-estate-inquiry">
+                <div class="form-group">
+                    <label>Property Type</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="re-type" value="residential" checked> Residential</label>
+                        <label><input type="radio" name="re-type" value="commercial"> Commercial</label>
+                        <label><input type="radio" name="re-type" value="land"> Land</label>
+                    </div>
+                </div>
+
+                <!-- Standard Property Fields -->
+                <div id="re-standard-fields">
+                    <div class="form-group">
+                        <label for="re-address">Property Address</label>
+                        <input type="text" id="re-address" name="re-address" placeholder="123 Main St">
+                    </div>
+                    <div class="form-group">
+                        <label for="re-sqft">Approx. Sq Footage</label>
+                        <input type="number" id="re-sqft" name="re-sqft" placeholder="e.g. 2500">
+                    </div>
+                </div>
+
+                <!-- Land Specific Fields (Hidden by default) -->
+                <div id="re-land-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="re-acreage">Acreage</label>
+                        <input type="number" id="re-acreage" name="re-acreage" placeholder="e.g. 50">
+                    </div>
+                    <div class="form-group">
+                        <label for="re-land-type">Land Type</label>
+                        <select id="re-land-type" name="re-land-type">
+                            <option value="agricultural">Agricultural</option>
+                            <option value="timber">Timber</option>
+                            <option value="investment">Investment</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="re-features">Key Features to Highlight</label>
+                    <textarea id="re-features" name="re-features" rows="3"
+                        placeholder="Pool, large backyard, renovated kitchen..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="re-phone">Phone Number</label>
+                    <input type="tel" id="re-phone" name="re-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="re-email">Your Email</label>
+                    <input type="email" id="re-email" name="re-email" required>
+                </div>
+                <button type="submit" class="btn-submit">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Commercial Modal -->
+    <div class="modal-backdrop" id="modal-commercial">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Small Business Advertisement</h3>
+            <form name="commercial-inquiry" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="commercial-inquiry">
+                <div class="form-group">
+                    <label for="comm-business">Business Name</label>
+                    <input type="text" id="comm-business" name="comm-business" required>
+                </div>
+                <div class="form-group">
+                    <label for="comm-address">Business Address</label>
+                    <input type="text" id="comm-address" name="comm-address">
+                </div>
+                <div class="form-group">
+                    <label for="comm-call-time">Best Time to Call</label>
+                    <input type="text" id="comm-call-time" name="comm-call-time" placeholder="e.g. Weekdays 9am-11am">
+                </div>
+                <div class="form-group">
+                    <label for="comm-desc">Project Description</label>
+                    <textarea id="comm-desc" name="comm-desc" rows="3"
+                        placeholder="Tell us about your vision..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="comm-phone">Phone Number</label>
+                    <input type="tel" id="comm-phone" name="comm-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="comm-email">Your Email</label>
+                    <input type="email" id="comm-email" name="comm-email" required>
+                </div>
+                <button type="submit" class="btn-submit">Request Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Social Media Modal -->
+    <div class="modal-backdrop" id="modal-social">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Social Media Management</h3>
+            <form name="social-media-inquiry" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="social-media-inquiry">
+                <div class="form-group">
+                    <label for="sm-business">Business Name</label>
+                    <input type="text" id="sm-business" name="sm-business" required>
+                </div>
+                <div class="form-group">
+                    <label for="sm-address">Business Address</label>
+                    <input type="text" id="sm-address" name="sm-address">
+                </div>
+                <div class="form-group">
+                    <label for="sm-call-time">Best Time to Call</label>
+                    <input type="text" id="sm-call-time" name="sm-call-time" placeholder="e.g. Mon/Wed afternoons">
+                </div>
+                <div class="form-group">
+                    <label for="sm-platforms">Current Platforms</label>
+                    <input type="text" id="sm-platforms" name="sm-platforms"
+                        placeholder="Instagram, Facebook, TikTok...">
+                </div>
+                <div class="form-group">
+                    <label for="sm-phone">Phone Number</label>
+                    <input type="tel" id="sm-phone" name="sm-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="sm-email">Your Email</label>
+                    <input type="email" id="sm-email" name="sm-email" required>
+                </div>
+                <button type="submit" class="btn-submit">Get Started</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Events Modal -->
+    <div class="modal-backdrop" id="modal-events">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h3>Event Coverage</h3>
+            <form name="events-inquiry" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="events-inquiry">
+                <div class="form-group">
+                    <label for="evt-type">Event Type</label>
+                    <select id="evt-type" name="evt-type">
+                        <option value="party">Party</option>
+                        <option value="sport">Sport Event</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="ceremony">Ceremony</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="evt-business">Business/Organization Name (if applicable)</label>
+                    <input type="text" id="evt-business" name="evt-business">
+                </div>
+                <div class="form-group">
+                    <label for="evt-address">Event Location/Address</label>
+                    <input type="text" id="evt-address" name="evt-address" required>
+                </div>
+                <div class="form-group">
+                    <label for="evt-date">Event Date</label>
+                    <input type="date" id="evt-date" name="evt-date">
+                </div>
+                <div class="form-group">
+                    <label for="evt-call-time">Best Time to Call</label>
+                    <input type="text" id="evt-call-time" name="evt-call-time">
+                </div>
+                <div class="form-group">
+                    <label for="evt-phone">Phone Number</label>
+                    <input type="tel" id="evt-phone" name="evt-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="evt-email">Your Email</label>
+                    <input type="email" id="evt-email" name="evt-email" required>
+                </div>
+                <button type="submit" class="btn-submit">Check Availability</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,326 @@
+/* Horizon Heights Service Gateway Styles */
+
+:root {
+    /* Colors - Updated from Logo */
+    --color-midnight: #001F3F;
+    /* Navy Blue */
+    --color-gold: #FF851B;
+    /* Orange/Gold from Logo */
+    --color-gold-light: #FFB057;
+    /* Lighter Orange for hover */
+    --color-white: #ffffff;
+    --color-gray-light: #e0e0e0;
+
+    /* Typography */
+    --font-primary: 'Outfit', 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+
+    /* Transitions */
+    --transition-smooth: 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-midnight);
+    color: var(--color-white);
+    overflow: hidden;
+    /* Prevent scrolling on desktop */
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Brand Overlay (Logo) */
+.brand-overlay {
+    position: fixed;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    pointer-events: none;
+    /* Let clicks pass through */
+    text-align: center;
+}
+
+.logo-img {
+    max-width: 250px;
+    /* Adjust based on preference */
+    height: auto;
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5));
+}
+
+/* Service Gateway Grid */
+.service-gateway {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+.service-panel {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.panel-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.8s ease;
+    z-index: 1;
+}
+
+.panel-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.4);
+    transition: background 0.5s ease;
+    z-index: 2;
+}
+
+.panel-content {
+    position: relative;
+    z-index: 3;
+    transform: translateY(20px);
+    transition: transform 0.5s ease;
+}
+
+.panel-content h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.panel-content p {
+    font-size: 1.1rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.btn-open-modal {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    font-family: var(--font-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.5s ease;
+}
+
+.btn-open-modal:hover {
+    background: var(--color-gold);
+    color: var(--color-midnight);
+}
+
+/* Hover Effects */
+.service-panel:hover .panel-bg {
+    transform: scale(1.1);
+}
+
+.service-panel:hover .panel-overlay {
+    background: rgba(10, 10, 10, 0.7);
+    /* Darken on hover to make text pop */
+}
+
+.service-panel:hover .panel-content {
+    transform: translateY(0);
+}
+
+.service-panel:hover .panel-content p,
+.service-panel:hover .btn-open-modal {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Modals */
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-backdrop.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-content {
+    background: rgba(20, 20, 20, 0.95);
+    border: 1px solid var(--color-gold);
+    padding: 3rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 4px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.modal-backdrop.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--color-gold);
+}
+
+.modal-content h3 {
+    font-family: var(--font-heading);
+    color: var(--color-gold);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-gray-light);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    font-family: var(--font-primary);
+    border-radius: 2px;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-gold);
+}
+
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1rem;
+    background: var(--color-gold);
+    color: var(--color-midnight);
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background: var(--color-gold-light);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto;
+        /* Allow scroll on mobile */
+        height: auto;
+    }
+
+    .service-gateway {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 300px);
+        /* Fixed height per panel */
+        height: auto;
+    }
+
+    .panel-content p,
+    .btn-open-modal {
+        opacity: 1;
+        /* Always visible on mobile */
+        transform: translateY(0);
+    }
+
+    .panel-overlay {
+        background: rgba(10, 10, 10, 0.5);
+    }
+
+    .modal-content {
+        padding: 2rem;
+        width: 95%;
+    }
+}
