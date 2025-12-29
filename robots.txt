@@ -4,9 +4,29 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.horizonheightsproductions.com/sitemap.xml
 
-# Block access to admin/config files
-Disallow: /assets/js/
+# Allow search engines to crawl JavaScript for better indexing
+Allow: /assets/js/*.js
+Allow: /assets/css/*.css
+
+# Block access to config/development files only
 Disallow: /*.sh$
 Disallow: /*.py$
-Disallow: /*.txt$
 Disallow: /*.md$
+Disallow: /node_modules/
+Disallow: /.git/
+
+# Allow AI crawlers (ChatGPT, Perplexity, Claude, etc.)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /

@@ -275,27 +275,193 @@
             {"@type":"SiteNavigationElement","name":"Contact","url":"https://www.horizonheightsproductions.com/#booking"}
         ]
     }</script>
+
+  <!-- AggregateRating Schema for Star Ratings in Search -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Horizon Heights Productions",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "12",
+      "bestRating": "5",
+      "worstRating": "1"
+    },
+    "review": [
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Tyler C."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Horizon Heights delivered stunning aerial shots of my 40-acre timber property. The drone footage captured views I never imagined, and the final video helped close the sale within two weeks."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Kim T."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Professional service from start to finish. The photos were delivered in 24 hours, and every room looked magazine-ready. Highly recommend for any real estate listing."
+      },
+      {
+        "@type": "Review",
+        "author": {
+          "@type": "Person",
+          "name": "Traci G."
+        },
+        "reviewRating": {
+          "@type": "Rating",
+          "ratingValue": "5"
+        },
+        "reviewBody": "Working with Horizon Heights was effortless. They coordinated the shoot around our business hours, delivered a polished commercial within a week, and exceeded our expectations."
+      }
+    ]
+  }</script>
+
+  <!-- VideoObject Schema for YouTube Videos -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Horizon Heights Productions - Real Estate Drone Showcase",
+    "description": "Professional drone photography and videography for real estate properties in Marietta, Ohio. Stunning aerial views, interior tours, and cinematic presentations for MLS listings.",
+    "thumbnailUrl": "https://img.youtube.com/vi/GWokIeZG_UI/maxresdefault.jpg",
+    "uploadDate": "2024-01-15",
+    "contentUrl": "https://www.youtube.com/watch?v=GWokIeZG_UI",
+    "embedUrl": "https://www.youtube.com/embed/GWokIeZG_UI",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Horizon Heights Productions",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.horizonheightsproductions.com/assets/images/logo.webp"
+      }
+    }
+  }</script>
+
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Large Land Aerial Footage - Marietta Ohio Drone Services",
+    "description": "Comprehensive drone coverage of large land parcels, farms, and timber tracts in the Mid-Ohio Valley. Boundary mapping, topography visualization, and scenic aerial perspectives.",
+    "thumbnailUrl": "https://img.youtube.com/vi/GyqlmDUmlrI/maxresdefault.jpg",
+    "uploadDate": "2024-02-20",
+    "contentUrl": "https://www.youtube.com/watch?v=GyqlmDUmlrI",
+    "embedUrl": "https://www.youtube.com/embed/GyqlmDUmlrI",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Horizon Heights Productions",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.horizonheightsproductions.com/assets/images/logo.webp"
+      }
+    }
+  }</script>
+
+  <!-- HowTo Schema for Booking Process -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Book Drone Photography Services in Marietta Ohio",
+    "description": "Step-by-step guide to scheduling professional drone photography and aerial videography with Horizon Heights Productions in Marietta, Ohio.",
+    "totalTime": "PT10M",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Select Your Service",
+        "text": "Choose from real estate photography, aerial videography, large land coverage, or event documentation.",
+        "url": "https://www.horizonheightsproductions.com/services.html"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Schedule Your Shoot",
+        "text": "Book online through our scheduling system or call (304) 543-3081 to discuss your project details and preferred date.",
+        "url": "https://www.horizonheightsproductions.com/contact.html"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Prepare Your Property",
+        "text": "We'll provide a pre-shoot checklist to ensure your property looks its best. Clear driveways, tidy exteriors, and turn on all lights."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Day of Shoot",
+        "text": "Our FAA-certified pilot arrives on time, conducts a safety check, and captures stunning aerial and ground footage."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Receive Your Media",
+        "text": "Photo galleries delivered within 48 hours. Videos and reels within 3-5 business days, all MLS-ready and optimized for social media."
+      }
+    ]
+  }</script>
+  <!-- Enhanced FAQPage Schema with More Questions for AI Search -->
   <script type="application/ld+json">{
         "@context":"https://schema.org",
         "@type":"FAQPage",
         "mainEntity":[
             {
                 "@type":"Question",
+                "name":"How much does drone photography cost in Marietta Ohio?",
+                "acceptedAnswer":{"@type":"Answer","text":"Drone photography in Marietta Ohio starts at $275 for interior and exterior photos. A complete residential bundle with drone aerial video costs $675. Large land coverage is $200 per parcel plus $10 per acre. All prices include professional editing and 48-hour delivery."}
+            },
+            {
+                "@type":"Question",
                 "name":"How fast can Horizon Heights deliver MLS-ready assets?",
-                "acceptedAnswer":{"@type":"Answer","text":"Standard residential galleries are delivered within 48 hours, with rush delivery available for active listings."}
+                "acceptedAnswer":{"@type":"Answer","text":"Standard residential photo galleries are delivered within 48 hours. Drone videos and cinematic reels are completed within 3-5 business days. Rush delivery is available for active listings and time-sensitive projects."}
             },
             {
                 "@type":"Question",
                 "name":"Do you travel outside of Marietta, Ohio?",
-                "acceptedAnswer":{"@type":"Answer","text":"Yes. Travel throughout the Mid-Ohio Valley is available and mileage is billed at $0.70 per mile from downtown Marietta."}
+                "acceptedAnswer":{"@type":"Answer","text":"Yes. Horizon Heights serves the entire Mid-Ohio Valley including Parkersburg, Vienna, Williamstown, Belpre, and surrounding areas. Travel is billed at $0.70 per mile from downtown Marietta."}
+            },
+            {
+                "@type":"Question",
+                "name":"Are you FAA certified and insured?",
+                "acceptedAnswer":{"@type":"Answer","text":"Yes. Horizon Heights maintains FAA Part 107 certification for commercial drone operations and carries full liability insurance. We can provide Certificates of Insurance (COI) upon request for commercial projects."}
+            },
+            {
+                "@type":"Question",
+                "name":"What services does Horizon Heights offer?",
+                "acceptedAnswer":{"@type":"Answer","text":"Horizon Heights offers real estate drone photography, aerial videography, large land mapping, event coverage, commercial video production, and social media management. Services include interior/exterior photography, cinematic drone tours, Matterport 3D tours, and monthly content creation packages."}
             },
             {
                 "@type":"Question",
                 "name":"Can you manage my social media rollout?",
-                "acceptedAnswer":{"@type":"Answer","text":"Horizon Heights offers monthly social media packages that include platform-specific edits, posting schedules, and analytics."}
+                "acceptedAnswer":{"@type":"Answer","text":"Yes. Horizon Heights offers monthly social media management packages starting at $700/month. Services include weekly posts and stories, monthly on-site production, reels and TikToks, community engagement, and analytics reporting."}
+            },
+            {
+                "@type":"Question",
+                "name":"What is included in the residential photography bundle?",
+                "acceptedAnswer":{"@type":"Answer","text":"The $675 residential bundle includes 25-35 edited interior and exterior photos, a cinematic drone aerial tour, one boundary photo, and priority delivery within 48 hours. All media is delivered MLS-ready and optimized for social media."}
+            },
+            {
+                "@type":"Question",
+                "name":"Do you offer drone services for events?",
+                "acceptedAnswer":{"@type":"Answer","text":"Yes. Horizon Heights provides drone coverage for weddings, festivals, corporate events, and community gatherings throughout the Mid-Ohio Valley. Event packages include both aerial and ground footage with highlight reel delivery within one week."}
             }
         ]
     }</script>
+
+  <!-- Speakable Markup for Voice Search Optimization -->
+  <script type="application/ld+json">{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Horizon Heights Productions - Drone Services Marietta Ohio",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".hh-hero-overlay", ".hh-answer-capsule"]
+    }
+  }</script>
 </head>
 
 <body id="home">
@@ -375,34 +541,42 @@
   <main id="content">
 
 
-    <!-- Answer Capsule for AI Citations -->
-    <section class="hh-section reveal" aria-label="What We Do" style="padding-top: 2rem;">
+    <!-- Answer Capsule for AI Citations and Voice Search -->
+    <section class="hh-section hh-answer-capsule reveal" aria-label="What We Do" style="padding-top: 2rem;">
       <div class="hh-container" style="max-width: 900px; text-align: center;">
         <div
           style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 2rem; margin-bottom: 3rem;">
 
           <div class="hh-video-showcase">
-            <!-- Existing Video -->
+            <!-- Real Estate Drone Showcase Video -->
             <div class="hh-video-wrapper">
-              <iframe src="https://www.youtube.com/embed/GWokIeZG_UI?si=lHD_h2ttPfXmc2K2" title="YouTube video player"
+              <iframe src="https://www.youtube.com/embed/GWokIeZG_UI?si=lHD_h2ttPfXmc2K2" title="Real Estate Drone Photography Showcase - Horizon Heights Productions Marietta Ohio"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
               </iframe>
+              <!-- Video Transcript for AI Search -->
+              <p style="font-size: 0.9rem; color: rgba(236,241,255,0.6); margin-top: 0.5rem; font-style: italic;">
+                Real estate drone photography featuring stunning aerial views of residential properties, interior tours with professional lighting, and cinematic transitions. Showcases MLS-ready photo galleries and drone video tours delivered within 48 hours in Marietta, Ohio.
+              </p>
             </div>
 
-            <!-- New Land Video -->
+            <!-- Large Land Aerial Coverage Video -->
             <div class="hh-video-wrapper">
-              <iframe src="https://www.youtube.com/embed/GyqlmDUmlrI?si=7BOFBah2mKnvad7L" title="YouTube video player"
+              <iframe src="https://www.youtube.com/embed/GyqlmDUmlrI?si=7BOFBah2mKnvad7L" title="Large Land Drone Coverage - Aerial Mapping Marietta Ohio"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              <!-- Video Transcript for AI Search -->
+              <p style="font-size: 0.9rem; color: rgba(236,241,255,0.6); margin-top: 0.5rem; font-style: italic;">
+                Comprehensive drone coverage of large land parcels, farms, and timber tracts in the Mid-Ohio Valley. Features boundary mapping, topography visualization, scenic aerial perspectives, and narrated route overviews perfect for MLS land listings.
+              </p>
             </div>
           </div>
 
-          <h2 style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">What is Horizon Heights Productions?
+          <h2 class="hh-answer-capsule" style="font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">What is Horizon Heights Productions?
           </h2>
-          <p style="font-size: 1.1rem; line-height: 1.8; color: #ECF1FF;">
+          <p class="hh-answer-capsule" style="font-size: 1.1rem; line-height: 1.8; color: #ECF1FF;">
             Horizon Heights Productions is the premier provider of <strong>drone services, professional
               photography, and aerial media</strong> in <strong>Marietta, Ohio</strong> and the Mid-Ohio
             Valley. While we specialize in <strong>real estate photos and video</strong>, our FAA-certified
