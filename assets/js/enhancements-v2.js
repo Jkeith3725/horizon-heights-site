@@ -164,15 +164,20 @@
 
         // Find all YouTube iframes and make them clickable
         document.querySelectorAll('iframe[src*="youtube.com"]').forEach(frame => {
+            // Skip if already wrapped
+            if (frame.parentNode.classList.contains('hh-video-thumbnail-wrapper')) return;
+
             const wrapper = document.createElement('div');
             wrapper.className = 'hh-video-thumbnail-wrapper';
+            wrapper.style.position = 'relative';
             wrapper.style.cursor = 'pointer';
             wrapper.title = 'Click to expand video';
 
             frame.parentNode.insertBefore(wrapper, frame);
             wrapper.appendChild(frame);
 
-            wrapper.addEventListener('click', () => {
+            wrapper.addEventListener('click', (e) => {
+                e.preventDefault();
                 openVideoModal(frame.src);
             });
         });
@@ -187,8 +192,8 @@
     function initGradientText() {
         if (prefersReducedMotion) return;
 
-        // Target the main hero title
-        const heroTitle = document.querySelector('.hh-hero h1');
+        // Target the main hero title span only (not the whole h1)
+        const heroTitle = document.querySelector('.hh-hero h1 span');
         if (!heroTitle) return;
 
         // Don't re-apply if already applied
@@ -212,28 +217,14 @@
                     #2EE6D5 50%,
                     #FFB25C 75%,
                     #FF7B2E 100%
-                );
-                background-size: 200% 200%;
-                -webkit-background-clip: text;
-                background-clip: text;
+                ) !important;
+                background-size: 200% 200% !important;
+                -webkit-background-clip: text !important;
+                background-clip: text !important;
+                -webkit-text-fill-color: transparent !important;
                 color: transparent !important;
                 animation: hh-gradient-shift 8s ease infinite;
-            }
-
-            .hh-gradient-text-animated span {
-                background: linear-gradient(
-                    120deg,
-                    #FF7B2E 0%,
-                    #FFB25C 25%,
-                    #2EE6D5 50%,
-                    #FFB25C 75%,
-                    #FF7B2E 100%
-                );
-                background-size: 200% 200%;
-                -webkit-background-clip: text;
-                background-clip: text;
-                color: transparent !important;
-                animation: hh-gradient-shift 8s ease infinite;
+                display: inline-block;
             }
         `;
         document.head.appendChild(style);
