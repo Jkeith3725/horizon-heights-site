@@ -1,0 +1,197 @@
+/**
+ * Horizon Heights - Enhancement Animations
+ * Additional CSS for enhanced UI features
+ * Safe to remove - no dependencies on main styles
+ */
+
+/* ===== STAGGERED GALLERY REVEAL ===== */
+.hh-enhanced-gallery-item {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hh-enhanced-gallery-item.hh-enhanced-revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ===== ENHANCED IMAGE HOVER ===== */
+.hh-gallery-card img,
+.hh-gallery-item img {
+    transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+                filter 0.3s ease;
+}
+
+/* ===== 3D CARD TILT ===== */
+.hh-card {
+    transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+    transform-style: preserve-3d;
+}
+
+/* ===== MAGNETIC BUTTONS ===== */
+.hh-cta,
+.hh-ghost {
+    transition: transform 0.2s cubic-bezier(0.22, 0.61, 0.36, 1),
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+/* ===== PARALLAX HERO ===== */
+.hh-hero-video {
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
+.hh-hero-overlay {
+    transition: transform 0.1s ease-out, opacity 0.2s ease;
+    will-change: transform, opacity;
+}
+
+/* ===== STATS COUNTER SECTION ===== */
+.hh-stats-section {
+    background: radial-gradient(circle at 30% 50%, rgba(255, 123, 46, 0.08), transparent 70%),
+                linear-gradient(180deg, transparent, rgba(6, 9, 27, 0.6));
+    padding: 80px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hh-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.hh-stat-card {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, rgba(10, 14, 32, 0.6), rgba(8, 9, 22, 0.4));
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1),
+                border-color 0.3s ease;
+}
+
+.hh-stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FF7B2E, #FFB25C, #2EE6D5);
+    opacity: 0.8;
+}
+
+.hh-stat-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 123, 46, 0.3);
+}
+
+.hh-stat-number {
+    font-size: clamp(3rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, #FF7B2E, #FFB25C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.hh-stat-label {
+    font-size: 1.05rem;
+    color: rgba(236, 241, 255, 0.85);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hh-stat-suffix {
+    display: inline-block;
+    font-size: 2.5rem;
+    margin-left: 4px;
+    background: linear-gradient(135deg, #FF7B2E, #FFB25C);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    vertical-align: super;
+    font-weight: 700;
+}
+
+/* ===== SMOOTH SCROLL BEHAVIOR (OPTIONAL) ===== */
+html {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ===== PERFORMANCE OPTIMIZATIONS ===== */
+.hh-enhanced-gallery-item,
+.hh-hero-video,
+.hh-hero-overlay,
+.hh-card {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* ===== MOBILE RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 768px) {
+    .hh-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .hh-stat-card {
+        padding: 30px 15px;
+    }
+
+    .hh-stat-number {
+        font-size: 2.5rem;
+    }
+
+    .hh-stat-label {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hh-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hh-stats-section {
+        padding: 60px 0;
+    }
+}
+
+/* ===== ACCESSIBILITY: Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+    .hh-enhanced-gallery-item,
+    .hh-card,
+    .hh-cta,
+    .hh-ghost,
+    .hh-hero-video,
+    .hh-hero-overlay,
+    .hh-gallery-card img,
+    .hh-gallery-item img {
+        transition: none !important;
+        transform: none !important;
+    }
+
+    .hh-enhanced-gallery-item {
+        opacity: 1;
+    }
+}
