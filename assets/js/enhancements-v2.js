@@ -162,19 +162,17 @@
             }
         });
 
-        // Find all YouTube iframes and make them clickable
-        document.querySelectorAll('iframe[src*="youtube.com"]').forEach(frame => {
-            // Skip if already wrapped
-            if (frame.parentNode.classList.contains('hh-video-thumbnail-wrapper')) return;
+        // Find all YouTube iframes and make their wrappers clickable
+        document.querySelectorAll('.hh-video-wrapper iframe[src*="youtube.com"]').forEach(frame => {
+            const wrapper = frame.closest('.hh-video-wrapper');
+            if (!wrapper) return;
 
-            const wrapper = document.createElement('div');
-            wrapper.className = 'hh-video-thumbnail-wrapper';
-            wrapper.style.position = 'relative';
-            wrapper.style.cursor = 'pointer';
+            // Skip if already enhanced
+            if (wrapper.classList.contains('hh-video-thumbnail-wrapper')) return;
+
+            // Add clickable class to existing wrapper
+            wrapper.classList.add('hh-video-thumbnail-wrapper');
             wrapper.title = 'Click to expand video';
-
-            frame.parentNode.insertBefore(wrapper, frame);
-            wrapper.appendChild(frame);
 
             wrapper.addEventListener('click', (e) => {
                 e.preventDefault();
