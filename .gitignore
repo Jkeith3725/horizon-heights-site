@@ -2,3 +2,7 @@
 .netlify
 final_videos/
 .DS_Store
+
+# Internal documentation and project resources (not for deployment)
+_project_resources/
+docs/
