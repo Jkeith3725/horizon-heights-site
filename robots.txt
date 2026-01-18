@@ -4,11 +4,16 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.horizonheightsproductions.com/sitemap.xml
 
-# Allow search engines to crawl JavaScript for better indexing
+# Allow search engines to crawl JavaScript and CSS for better indexing
 Allow: /assets/js/*.js
 Allow: /assets/css/*.css
 
-# Block access to config/development files only
+# Block access to internal development directories and files
+Disallow: /_project_resources/
+Disallow: /docs/
+Disallow: /archive/
+Disallow: /scripts/
+Disallow: /Horizon Heights Landing Page
 Disallow: /*.sh$
 Disallow: /*.py$
 Disallow: /*.md$

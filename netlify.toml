@@ -1,21 +1,41 @@
-# example netlify.toml
+# Netlify Configuration for Horizon Heights Productions
 [build]
   command = "# no build command"
   functions = "netlify/functions"
   publish = ""
 
-  ## Uncomment to use this redirect for Single Page Applications like create-react-app.
-  ## Not needed for static site generators.
-  #[[redirects]]
-  #  from = "/*"
-  #  to = "/index.html"
-  #  status = 200
+## Sitemap Plugin Configuration
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+  
+  [plugins.inputs]
+    # Exclude internal development pages and resources from sitemap
+    exclude = [
+      "/_project_resources/**",
+      "/docs/**",
+      "/archive/**",
+      "/Horizon Heights Landing Page",
+      "/Horizon%20Heights%20Landing%20Page"
+    ]
+    # Set more appropriate change frequency
+    changeFreq = "weekly"
+    # Differentiate priority for different page types
+    priority = 0.8
+    # Ensure proper trailing slashes
+    trailingSlash = false
 
-  ## (optional) Settings for Netlify Dev
-  ## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
-  #[dev]
-  #  command = "yarn start" # Command to start your dev server
-  #  port = 3000 # Port that the dev server will be listening on
-  #  publish = "dist" # Folder with the static content for _redirect file
+## Uncomment to use this redirect for Single Page Applications like create-react-app.
+## Not needed for static site generators.
+#[[redirects]]
+#  from = "/*"
+#  to = "/index.html"
+#  status = 200
 
-  ## more info on configuring this file: https://ntl.fyi/file-based-build-config
+## (optional) Settings for Netlify Dev
+## https://github.com/netlify/cli/blob/main/docs/netlify-dev.md#project-detection
+#[dev]
+#  command = "yarn start" # Command to start your dev server
+#  port = 3000 # Port that the dev server will be listening on
+#  publish = "dist" # Folder with the static content for _redirect file
+
+## more info on configuring this file: https://ntl.fyi/file-based-build-config
